@@ -1,0 +1,1084 @@
+/* Copyright© 2024 By SouthAki All Rights Reserved. */
+/* 业务逻辑代码 */
+/* 1start */
+
+/* 顶部导航栏 */
+/* start */
+.header {
+    height: 60px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    /* 顶部导航栏需要固定定位在最上面 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    /* 最小宽度 */
+    min-width: 1280px;
+}
+
+/* end */
+
+/* 左部分 */
+/* start */
+.header .header-left {
+    width: 150px;
+    height: 27px;
+    position: absolute;
+    top: 16.5px;
+    left: 165px;
+}
+
+.header .header-left img {
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+.header .header-left p {
+    color: white;
+    float: right;
+    margin-top: 2px;
+    margin-left: 8px;
+    font-size: 14px;
+    font-family: "PingFang SC";
+}
+
+/* end */
+
+/* 导航栏部分 */
+/* start */
+.header .nav {
+    width: 200px;
+    height: 60px;
+    position: relative;
+    top: 0;
+    left: 45%;
+}
+
+.header .nav ul {
+    height: 60px;
+    width: 200px;
+    line-height: 60px;
+}
+
+.header .nav ul li {
+    color: white;
+    float: left;
+    width: 40px;
+    margin-right: 20px;
+    font-size: 14px;
+    font-family: "PingFang SC";
+}
+
+/* end */
+
+/* 右部分 */
+/* start */
+.header .header-right {
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    right: 165px;
+}
+
+.header .header-right .header-blog {
+    color: white;
+    line-height: 60px;
+    font-size: 14px;
+    font-family: "PingFang SC";
+}
+
+/* end */
+
+/* 海报墙部分 */
+/* 2start */
+.main .poster {
+    /* 定义最小宽度值和最大宽度值 */
+    width: 100%;
+    min-width: 1280px;
+    /* 这里可以替换自己想要的背景图片 */
+    background: url('/images/poster-bg.png');
+    /* 这里是让背景图片彻底填充满页面 */
+    background-size: cover;
+    /* 这里给的高度的值是,当前可视化页面的高度,vh就是如此 */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.main .poster .poster-top {
+    width: 1200px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    background-color: #f5f5f7bc;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    /* z-index: 10; */
+}
+
+.main .poster .poster-top .poster-top-left {
+    width: 630px;
+    height: 356px;
+    position: absolute;
+    top: 10%;
+    left: 40px;
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-title {
+    width: 630px;
+    height: 75px;
+    font-size: 70px;
+    font-weight: 400;
+    color: #00001e;
+    line-height: 75px;
+    font-weight: bold;
+    font-family: "PingFang SC";
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-title-small {
+    width: 630px;
+    height: 68px;
+    display: block;
+    font-size: 28px;
+    font-weight: 400;
+    color: #00001e;
+    line-height: 34px;
+    margin-top: 28px;
+    font-weight: bold;
+}
+
+/* 移入颜色变成67,117,255 */
+.main .poster .poster-top .poster-top-left .poster-top-left-about {
+    width: 630px;
+    height: 112px;
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-left-about .about {
+    display: flex;
+    width: 136px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    padding: 0 36px;
+    margin-top: 64px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    transition: all .5s;
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-left-about .about:hover {
+    display: flex;
+    width: 136px;
+    height: 48px;
+    background-color: rgb(67, 117, 255);
+    color: white;
+    padding: 0 36px;
+    margin-top: 64px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    transition: all .5s;
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-left-about .icon {
+    display: flex;
+    width: 52px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    padding: 0 36px;
+    margin-top: 64px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    position: absolute;
+    bottom: -2px;
+    left: 150px;
+    transition: all .5s;
+}
+
+.main .poster .poster-top .poster-top-left .poster-top-left-about .icon:hover {
+    display: flex;
+    width: 52px;
+    height: 48px;
+    background-color: rgb(67, 117, 255);
+    color: white;
+    padding: 0 36px;
+    margin-top: 64px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    position: absolute;
+    bottom: -2px;
+    left: 150px;
+    transition: all .5s;
+}
+
+.main .poster .poster-top-right {
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    top: 3%;
+    right: 40px;
+}
+
+.main .poster .poster-top .poster-top-right img {
+    width: 405px;
+    height: 405px;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+    border-radius: 30px;
+}
+
+/* 注意这是海报墙下面的框框 */
+/* 跟top没关系 */
+/* 3start */
+.main .poster .poster-top .poster-bottom {
+    width: 1200px;
+    height: 200px;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    background-color: #f5f5f7bc;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.main .poster .poster-top .poster-bottom span {
+    display: flex;
+    font-size: 15px;
+    font-family: "PingFang SC";
+    text-align: center;
+    margin: 0 5%;
+    margin-top: 18px
+}
+
+.main .poster .poster-top .poster-bottom img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 50%;
+    margin-top: -5px;
+    border: 4px solid white;
+}
+
+.main .poster .poster-top .poster-bottom .poster-bottom-title {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-70%);
+    font-family: "PingFang SC";
+}
+
+.main .poster .poster-top .poster-bottom .poster-bottom-title-small {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-53%);
+    font-size: 14px;
+    font-family: "PingFang SC";
+    opacity: 0.6;
+}
+
+/* 3end */
+
+/* 下移图标 */
+/* 4start */
+.main .poster .poster-top .down-type {
+    width: 26px;
+    position: absolute;
+    bottom: -90%;
+    left: 50%;
+}
+
+.main .poster .poster-top .down-type img {
+    /* 去掉图片边框用 */
+    display: block;
+}
+
+.main .poster .poster-top .down-type .down-type-1 {
+    animation: arrow 1.5s infinite 0s;
+}
+
+.main .poster .poster-top .down-type .down-type-2 {
+    animation: arrow 1.5s infinite 0.5s;
+}
+
+.main .poster .poster-top .down-type .down-type-3 {
+    animation: arrow 1.5s infinite 1s;
+}
+
+@keyframes arrow {
+
+    /* 这里写的是对时间产生比例进行效果输出 */
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 4end */
+/* 2end */
+
+/* 个人页面 */
+/* 5start */
+.main .pages {
+    min-height: 800px;
+    width: 100%;
+    background: url('/images/pages-bg.jpeg');
+    background-size: cover;
+    /* 父元素相对定位 */
+    position: relative;
+}
+
+/* 页面内容 */
+.main .pages .pages-info {
+    max-width: 1200px;
+    width: 90%;
+    top: 20%;
+    left: 50%;
+    /* 子元素绝对定位 */
+    position: absolute;
+    /* 设置偏移量 */
+    transform: translate(-50%, -50%);
+}
+
+.main .pages .pages-info .pages-tips {
+    color: #e5a80d;
+    font-size: 14px;
+    font-family: "PingFang SC";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .pages .pages-info .pages-title {
+    font-size: 56px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-37.5%);
+    font-family: "PingFang SC";
+}
+
+.main .pages .pages-info .pages-about {
+    opacity: 0.8;
+    position: absolute;
+    left: 50%;
+    top: 500%;
+    transform: translate(-50%, -50%);
+}
+
+.main .pages .pages-info .pages-about-info {
+    font-size: 16px;
+    color: white;
+    margin: 0 0 32px 0;
+    font-family: "PingFang SC";
+}
+
+.main .pages .pages-info .pages-link {
+    position: absolute;
+    top: 650%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main .pages .pages-info .pages-link .pages-buttom {
+    padding: 8px 26px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    border-radius: 26px;
+    transition: ease-in-out 0.3s;
+    white-space: nowrap;
+    font-family: "PingFang SC";
+}
+
+.main .pages .pages-info .pages-link .pages-buttom:hover {
+    padding: 8px 26px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    border-radius: 26px;
+    transition: ease-in-out 0.3s;
+    white-space: nowrap;
+    font-family: "PingFang SC";
+}
+
+.main .pages .pages-info .pages-link .second-link {
+    color: black;
+    opacity: 1;
+    font-size: 14px;
+    margin-left: 12px;
+    transition: ease-in-out 0.3s;
+    font-family: "PingFang SC";
+}
+
+.main .pages .pages-pic {
+    max-width: 968px;
+    width: 30%;
+    margin: auto;
+    will-change: transform;
+    transform: translate3d(-50%, 0px, 0px);
+    transition: transform 2s cubic-bezier(0, 0, 0, 1) 0s;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.main .pages .pages-pic .pages-pic-img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 个人简化版页面 */
+.main .simplifypages {
+    width: 100%;
+    height: 308px;
+    background: #f5f5f7;
+    position: relative;
+}
+
+.main .simplifypages .simplifypages-title {
+    position: absolute;
+    top: 16.5px;
+    left: 165px;
+    font-size: 32px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.main .simplifypages .simplifypages-info {
+    position: absolute;
+    top: 55px;
+    margin-top: 15px;
+    left: 165px;
+    font-size: 14px;
+    font-family: "PingFang SC";
+}
+
+.main .simplifypages .simplifypages-content {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    font-size: 14px;
+    font-family: "PingFang SC";
+    margin-right: 10px;
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+    position: absolute;
+    top: 145%;
+    left: 40%;
+    margin-right: 10px;
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right {
+    position: absolute;
+    top: 145%;
+    left: 80%;
+    width: 167px;
+    height: 100px;
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-word {
+    font-size: 20px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    margin: 0, 0, 8px, 0;
+    color: #00001e;
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypsges-word-redword {
+    position: absolute;
+    top: -10%;
+    right: -20%;
+    background: rgba(255, 0, 0, 0.693);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 32px;
+    text-align: center;
+    font-family: "PingFang SC";
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right p {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    opacity: 0.85;
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link {
+    width: 68px;
+    height: 30px;
+    background: #3478f5;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    transition: ease-in-out 0.3s;
+    font-family: "PingFang SC";
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link:hover {
+    width: 68px;
+    height: 30px;
+    background: #3478f5;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    opacity: 0.85;
+    transition: ease-in-out 0.3s;
+    font-family: "PingFang SC";
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link-2 {
+    width: 100px;
+    height: 30px;
+    background: #3478f5;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transition: ease-in-out 0.3s;
+    font-family: "PingFang SC";
+}
+
+.main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link-2:hover {
+    width: 100px;
+    height: 30px;
+    background: #3478f5;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    opacity: 0.85;
+    transition: ease-in-out 0.3s;
+    font-family: "PingFang SC";
+}
+
+/* 5end */
+
+/* 个人文章 */
+/* 6start */
+.main .article {
+    min-height: 800px;
+    width: 100%;
+    background: url('/images/article-bg.jpg');
+    background-size: cover;
+    /* 父元素相对定位 */
+    position: relative;
+}
+
+/* 页面内容 */
+.main .article .article-info {
+    max-width: 1200px;
+    width: 90%;
+    top: 20%;
+    left: 50%;
+    /* 子元素绝对定位 */
+    position: absolute;
+    /* 设置偏移量 */
+    transform: translate(-50%, -50%);
+}
+
+.main .article .article-info .article-tips {
+    color: white;
+    font-size: 14px;
+    font-family: "PingFang SC";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .article .article-info .article-title {
+    font-size: 56px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    margin-top: -10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-37.5%);
+    font-family: "PingFang SC";
+}
+
+.main .articles .article-info .article-about {
+    opacity: 0.8;
+    position: absolute;
+    left: 50%;
+    top: 500%;
+    transform: translate(-50%, -50%);
+}
+
+.main .article .article-info .article-about-info {
+    font-size: 16px;
+    color: white;
+    margin: 0 0 32px 0;
+    position: absolute;
+    top: 390%;
+    left: 44%;
+    font-family: "PingFang SC";
+}
+
+.main .article .article-info .article-link {
+    position: absolute;
+    top: 650%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main .article .article-info .article-link .article-buttom {
+    padding: 8px 26px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    border-radius: 26px;
+    transition: ease-in-out 0.3s;
+    white-space: nowrap;
+}
+
+.main .article .article-info .article-link .article-buttom:hover {
+    padding: 8px 26px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-family: "PingFang SC";
+    border-radius: 26px;
+    transition: ease-in-out 0.3s;
+    white-space: nowrap;
+}
+
+.main .article .article-info .article-link .article-link {
+    color: black;
+    opacity: 1;
+    font-size: 14px;
+    margin-left: 12px;
+    font-family: "PingFang SC";
+    transition: ease-in-out 0.3s;
+}
+
+.main .article .article-pic {
+    max-width: 968px;
+    width: 30%;
+    margin: auto;
+    will-change: transform;
+    transform: translate3d(-50%, 0px, 0px);
+    transition: transform 2s cubic-bezier(0, 0, 0, 1) 0s;
+    position: absolute;
+    bottom: -12%;
+    left: 50%;
+}
+
+.main .article .article-pic .article-pic-img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 个人简化版页面 */
+.main .simplifyarticle {
+    width: 100%;
+    height: 308px;
+    background: #f5f5f7;
+    position: relative;
+}
+
+.main .simplifyarticle .simplifyarticle-title {
+    position: absolute;
+    top: 16.5px;
+    left: 165px;
+    font-size: 32px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.main .simplifyarticle .simplifyarticle-info {
+    position: absolute;
+    top: 55px;
+    margin-top: 15px;
+    left: 165px;
+    font-size: 14px;
+    font-family: "PingFang SC";
+}
+
+.main .simplifyarticle .simplifyarticle-content {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    font-size: 14px;
+    font-family: "PingFang SC";
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+    position: absolute;
+    top: 145%;
+    left: 40%;
+    margin-right: 10px;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right {
+    position: absolute;
+    top: 145%;
+    left: 80%;
+    width: 167px;
+    height: 100px;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-word {
+    font-size: 20px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    margin: 0, 0, 8px, 0;
+    color: #00001e;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .two {
+    font-size: 20px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    margin: 0, 0, 8px, 0;
+    color: #00001e;
+    width: 183px;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-word-redword {
+    position: absolute;
+    top: -10%;
+    right: -20%;
+    background: rgba(255, 0, 0, 0.693);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 32px;
+    text-align: center;
+    font-family: "PingFang SC";
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right p {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    opacity: 0.85;
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-link {
+    width: 68px;
+    height: 30px;
+    background: #3478f5;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    font-family: "PingFang SC";
+}
+
+.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-link-2 {
+    width: 110px;
+    height: 30px;
+    color: rgba(60, 60, 67, 0.6);
+    padding: 6px 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font-family: "PingFang SC";
+}
+
+/* 6end */
+
+/* 个人技能页面 */
+/* 7start */
+.main .personal-skills {
+    min-height: 800px;
+    width: 100%;
+    background: url('/images/personal-skills-bg.jpg');
+    background-size: cover;
+    /* 父元素相对定位 */
+    position: relative;
+}
+
+.main .personal-skills .personal-skills-box {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.834);
+    border-radius: 30px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-title {
+    font-size: 32px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 16.5px;
+    left: 45px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-info {
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    font-family: "PingFang SC";
+    color: rgba(60, 60, 60, 0.6);
+    font-size: 14px;
+}
+
+/* 列表开始处 */
+.main .personal-skills .personal-skills-box .personal-skills-lists {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list {
+    width: 30%;
+    height: 50%;
+    float: right;
+    margin-left: 38px;
+    position: relative;
+    border-radius: 12px;
+    /* border: 5px solid white; */
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1 {
+    background: url('/images/personal-bg.png');
+    background-size: cover;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2 {
+    background: url('/images/article-bg.jpg');
+    background-size: cover;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-3 {
+    background: url('/images/poster-bg.png');
+    background-size: cover;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:first-child {
+    margin-right: 35px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:last-child {
+    margin-left: 35px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list p {
+    font-size: 20px;
+    color: white;
+    font-family: "PingFang SC";
+    text-align: center;
+    justify-content: center;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    opacity: 0.85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-left img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20%;
+    left: 5px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right {
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right span {
+    font-size: 28px;
+    font-family: "PingFang SC";
+    color: black;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right p {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    margin-top: 1px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right a {
+    width: 30px;
+    padding: 5px;
+    height: 10px;
+    line-height: 1;
+    border-radius: 15px;
+    background-color: #3478f5;
+    color: white;
+}
+
+/* 7end */
+
+/* 未完待续 */
+.notfinished{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.notfinished .notfinished-box{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* .notfinished .notfinished-box .notfinished-box-left {
+    width: 30%;
+    height: 100%;
+} */
+
+.notfinished .notfinished-box .notfinished-box-left .notfinished-box-left-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+}
+
+.notfinished .notfinished-box .notfinished-box-right{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.notfinished .notfinished-box .notfinished-box-right .notfinished-box-right-title{
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "PingFang SC";
+    color: black;
+    opacity: 0.85;
+}
+
+.notfinished .notfinished-box .notfinished-box-right p{
+    font-size: 14px;
+    font-family: "PingFang SC";
+    color: black;
+    opacity: 0.85;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 底部角标 */
+/* 8start */
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: #eaeaea;
+    position: relative;
+}
+
+.footer .footer-box {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer .footer-box .footer-box-left {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    color: #00001e;
+    opacity: 0.6;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.footer .footer-box .footer-box-right {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    font-weight: bold;
+    color: #00001e;
+    opacity: 0.6;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}
+
+.footer .footer-box .footer-footer {
+    position: absolute;
+    margin-top: 10px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-family: "PingFang SC";
+    color: #00001e;
+    opacity: 0.6;
+}
+
+/* 8end */
+/* 1end */

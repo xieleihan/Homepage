@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "128976",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e7ab",
+      "unicode_decimal": 59307
+    }
+  ]
+}
