@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1705127701362') format('truetype');
+  src: url('iconfont.ttf?t=1705239586418') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +12,18 @@
 }
 
 .icon-github:before {
-  content: "\e7ab";
+  content: "\e709";
+}
+
+.icon-QQ:before {
+  content: "\e882";
+}
+
+.icon-tuite:before {
+  content: "\e652";
+}
+
+.icon-bilibili-line:before {
+  content: "\e66d";
 }
 

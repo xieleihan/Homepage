@@ -241,6 +241,23 @@
     margin-top: 7.5px;
     margin-left: 7.5px;
     border-radius: 30px;
+    animation: floating 4s ease-in-out infinite;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 /* 注意这是海报墙下面的框框 */
@@ -338,6 +355,38 @@
 }
 
 /* 4end */
+
+.main .poster .poster-name {
+    color: white;
+    position: absolute;
+    width: 700px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-family: "zk";
+    animation: tying 2s steps(22), blnk .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+@keyframes tying {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 700px;
+    }
+}
+
+@keyframes blnk {
+    50% {
+        border-color: transparent;
+    }
+}
+
 /* 2end */
 
 /* 个人页面 */
@@ -885,30 +934,146 @@
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list {
     width: 30%;
     height: 50%;
-    float: right;
     margin-left: 38px;
     position: relative;
     border-radius: 12px;
+    margin-top: 5px;
     /* border: 5px solid white; */
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .name {
+    font-size: 16px;
+    font-family: "zk";
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    left: 6px;
+    animation: typing 2s steps(22), blink 0s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 460px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover {
+    width: 30%;
+    height: 50%;
+    margin-left: 38px;
+    position: relative;
+    border-radius: 12px;
+    margin-top: 5px;
+    border: 5px solid white;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    /* 设置过渡属性 */
+    transition: all .3s;
+    z-index: 2;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    border-radius: 12px;
+    left: 0;
+    top: 0;
+    /* 设置过渡属性 */
+    transition: all .3s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .hello-img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 65%;
+    left: 60%;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .hello-img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 65%;
+    left: 60%;
+    opacity: 1;
+    transition: all 1s;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1 {
     background: url('/images/personal-bg.png');
     background-size: cover;
+    transition: all .3s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1:hover {
+    background: url('/images/personal-bg.png') no-repeat center center/cover;
+    /* background-size: cover; */
+    /* 变形-缩放 */
+    transform: scale(1.05);
+    overflow: hidden;
+    transition: all .3s;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2 {
     background: url('/images/article-bg.jpg');
     background-size: cover;
+    transition: all .3s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2:hover {
+    background: url('/images/article-bg.jpg') no-repeat center center/cover;
+    transition: all .3s;
+    /* 变形-缩放 */
+    transform: scale(1.05);
+    overflow: hidden;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-3 {
     background: url('/images/poster-bg.png');
     background-size: cover;
+    transition: all .3s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-3:hover {
+    background: url('/images/poster-bg.png') no-repeat center center/cover;
+    transition: all .3s;
+    /* 变形-缩放 */
+    transform: scale(1.05);
+    overflow: hidden;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:first-child {
-    margin-right: 35px;
+    margin-right: 0px;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:last-child {
@@ -933,6 +1098,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .2s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-info {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    opacity: 0.85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: all .2s;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-left img {
@@ -975,19 +1156,19 @@
 /* 7end */
 
 /* 未完待续 */
-.notfinished{
+.notfinished {
     width: 100%;
     height: 300px;
     position: relative;
 }
 
-.notfinished .notfinished-box{
+.notfinished .notfinished-box {
     width: 90%;
     height: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 /* .notfinished .notfinished-box .notfinished-box-left {
@@ -995,24 +1176,24 @@
     height: 100%;
 } */
 
-.notfinished .notfinished-box .notfinished-box-left .notfinished-box-left-img{
+.notfinished .notfinished-box .notfinished-box-left .notfinished-box-left-img {
     width: 100px;
     height: 100px;
     border-radius: 30px;
     position: absolute;
     top: 40%;
     left: 20%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.notfinished .notfinished-box .notfinished-box-right{
+.notfinished .notfinished-box .notfinished-box-right {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.notfinished .notfinished-box .notfinished-box-right .notfinished-box-right-title{
+.notfinished .notfinished-box .notfinished-box-right .notfinished-box-right-title {
     font-size: 28px;
     font-weight: bold;
     font-family: "PingFang SC";
@@ -1020,7 +1201,7 @@
     opacity: 0.85;
 }
 
-.notfinished .notfinished-box .notfinished-box-right p{
+.notfinished .notfinished-box .notfinished-box-right p {
     font-size: 14px;
     font-family: "PingFang SC";
     color: black;
@@ -1028,6 +1209,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 /* 底部角标 */
 /* 8start */
 .footer {
@@ -1081,4 +1263,108 @@
 }
 
 /* 8end */
+
+/* 侧边栏 */
+.sideBar {
+    width: 178px;
+    background: rgba(255, 255, 255, 0.9);
+    height: 420px;
+    padding: 0 2px 10px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    /* transform: translate(x轴,y轴); */
+    transform: translate(0, -50%);
+    /* 堆叠顺序 */
+    z-index: 1000;
+    /* 添加过渡效果 */
+    transition: all .5s;
+    /* opacity: 0; */
+    opacity: 0;
+}
+
+/* js变化样式 */
+.sideBar.folding {
+    transform: translate(100%, -50%);
+    opacity: 1;
+}
+
+/* 箭头图标 */
+.sideBar .arrow-icon-box {
+    width: 30px;
+    height: 52px;
+    background: #333;
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    /* border-radius: 左上 右上 右下 左下; */
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+
+.sideBar .arrow-icon-box .arrow-icon {
+    background: url('/images/arrow2.png');
+    width: 12px;
+    height: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 17px;
+    /* 添加过渡效果 */
+    transition: all .8s;
+}
+
+.sideBar.folding .arrow-icon-box .arrow-icon {
+    /* 变形旋转 */
+    transform: rotate(-180deg);
+}
+
+.sideBar .content .content-top {
+    text-align: center;
+}
+
+.sideBar .content .content-top .about {
+    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 27px;
+    font-size: 18px;
+    color: #121212;
+}
+
+.sideBar .content .content-top img {
+    width: 147px;
+    height: 147px;
+}
+
+.sideBar .content .content-top .scan-code {
+    font-size: 16px;
+    opacity: .8;
+    padding-top: 10px;
+    padding-bottom: 27px;
+}
+
+.sideBar .content .content-bottom .item {
+    height: 44px;
+    line-height: 44px;
+    cursor: pointer;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.sideBar .content .content-bottom .item:hover {
+    background: #333333;
+    color: #ffd49f;
+}
+
+.sideBar .content .content-bottom .item .iconfont {
+    float: left;
+    font-size: 28px;
+}
+
+.sideBar .content .content-bottom .item .text {
+    float: right;
+    font-size: 16px;
+}
+
+/* :end */
+
 /* 1end */

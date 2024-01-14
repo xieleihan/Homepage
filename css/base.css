@@ -55,4 +55,9 @@ a {
     color: inherit;
 }
 
+@font-face {
+    font-family: 'zk';
+    /* 自定义字体名称 */
+    src: url('/font-family/zk.ttf') format('truetype');
+}
 /* end */
