@@ -39,11 +39,27 @@ img {
 /* 设置整个页面整个字体相关样式 */
 body {
     font-size: 14px;
-    font-family: "PingFang SC","Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
+    font-family: "PingFang SC", "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
     /* 设置行高为1.5倍 */
     line-height: 1.5;
     /* 设置页面最小宽度 */
     min-width: 1280px;
+    
+    /* 从css禁用用户选择文字 */
+    /* start */
+    -moz-user-select: none;
+    /* Firefox私有属性 */
+    -webkit-user-select: none;
+    /* WebKit内核私有属性 */
+    -ms-user-select: none;
+    /* IE私有属性(IE10及以后) */
+    -khtml-user-select: none;
+    /* KHTML内核私有属性 */
+    -o-user-select: none;
+    /* Opera私有属性 */
+    user-select: none;
+    /* CSS3属性 */
+    /* end */
 }
 
 /* 超链接的美化 */
@@ -60,4 +76,5 @@ a {
     /* 自定义字体名称 */
     src: url('/font-family/zk.ttf') format('truetype');
 }
+
 /* end */

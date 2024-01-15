@@ -68,8 +68,8 @@
                     </span>
                     <!-- 下面这个最好不改 -->
                     <div class="poster-top-left-about clean">
-                        <a href="#" class="about fl">了解更多</a>
-                        <a href="#" class="icon fr">
+                        <a href="https://southaki.cn/" class="about fl">了解更多</a>
+                        <a href="https://github.com/xieleihan" class="icon fr">
                             <p class="iconfont icon-github"></p>
                         </a>
                     </div>
@@ -114,8 +114,8 @@
                     <span class="pages-about-info">我把毕生所学的知识放在个人博客,<br>为了后来人能更好探索这个世界.</span>
                 </div>
                 <div class="pages-link">
-                    <a href="" class="pages-buttom">访问项目</a>
-                    <a href="" class="second-link">2023.07.22 建站</a>
+                    <a href="https://blog.southaki.top/" class="pages-buttom">访问项目</a>
+                    <a href="https://southaki.cn/" class="second-link">2023.07.22 建站</a>
                 </div>
             </div>
             <div class="pages-pic">
@@ -132,8 +132,8 @@
                     <div class="simplifypages-word">南秋SouthAki🍉</div>
                     <div class="simplifypsges-word-redword">热门</div>
                     <p>认真摸鱼中,咕噜...</p>
-                    <a href="" class="simplifypages-link">访问</a>
-                    <a href="" class="simplifypages-link-2">CDN加速</a>
+                    <a href="https://southaki.cn/" class="simplifypages-link">访问</a>
+                    <a href="https://blog.southaki.top/" class="simplifypages-link-2">CDN加速</a>
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@
                     <span class="article-about-info">人生就是一个小宇宙,<br>循此苦旅以达星辰.</span>
                 </div>
                 <div class="article-link">
-                    <a href="" class="article-buttom">Github</a>
+                    <a href="https://github.com/xieleihan" class="article-buttom">Github</a>
                 </div>
             </div>
             <div class="article-pic">
@@ -174,7 +174,7 @@
             <div class="simplifyarticle-content clean">
                 <img src="/images/article.png" alt="" class="simplifyarticle-content-img fl" />
                 <div class="simplifyarticle-content-right fr">
-                    <div class="simplifyarticle-word two">cloudflare搭建网站</div>
+                    <div class="simplifyarticle-word two">Cloudflare建网站</div>
                     <div class="simplifyarticle-word-redword">省钱</div>
                     <p>薅羊毛的乐趣</p>
                     <a href="" class="simplifyarticle-link">访问</a>
@@ -243,6 +243,32 @@
     </div>
     <!-- end -->
 
+    <!-- 相册 -->
+    <!-- start -->
+    <div class="photos">
+        <div class="photos-box">
+            <div class="photos-title">相册</div>
+            <div class="container">
+                <div class="pocker pocker-1">
+                    <img src="/images/photo-pocket-1.png" alt="">
+                </div>
+                <div class="pocker pocker-2">
+                    <img src="/images/photo-pocket-2.jpg" alt="">
+                </div>
+                <div class="pocker pocker-3">
+                    <img src="/images/photo-pocket-3.jpg" alt="">
+                </div>
+                <div class="pocker pocker-4">
+                    <img src="/images/photo-pocket-4.jpg" alt="">
+                </div>
+                <div class="pocker pocker-5" onclick="poker.move()">
+                    <img src="/images/photo-pocket-5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+
     <!-- 未完待续 -->
     <!-- start -->
     <div class="notfinished">
@@ -290,15 +316,15 @@
             </div>
             <!-- 下部分 -->
             <div class="content-bottom">
-                <div class="item clean">
+                <div class="item clean" onclick="executeQQSwal()">
                     <span class="iconfont icon-QQ"></span>
                     <span class="text">QQ</span>
                 </div>
-                <div class="item clean">
+                <div class="item clean" onclick="executeTwSwal()">
                     <span class="iconfont icon-tuite"></span>
                     <span class="text">Twitter</span>
                 </div>
-                <div class="item clean">
+                <div class="item clean" onclick="executeBilibiliSwal()">
                     <span class="iconfont icon-bilibili-line"></span>
                     <span class="text">Bilibili</span>
                 </div>
@@ -309,5 +335,7 @@
 
 </body>
 <script src="/js/main.js"></script>
+<script src="/js/sweetalert.min.js"></script>
+<script src="/js/jquery-3.7.1.min.js"></script>
 
 </html>
