@@ -114,17 +114,18 @@ window.onscroll = function () {
 // 相册功能实现区域
 // start
 const poker = {
+    imgs: [],
+    img_index: 0,
     poker_eles: {},
     transform_datas: [
-        "transform: translate(0 %, 0 %)",
-        "transform: translate(80 %, 0 %)",
-        "transform: translate(160 %, 0 %)",
-        "transform: translate(240 %, 0 %)",
-        "transform: translate(320 %, 0 %)"
+        "rotate(-10deg)",
+        "rotate(-6deg) translate(35%, -12%)",
+        "rotate(-2deg) translate(65%, -19%)",
+        "rotate(2deg) translate(95%, -26%)",
+        "rotate(6deg) translate(125%, -23%)",
     ],
     init() {
-        // console.log(document.getElementsByClassName('pocker'))
-        this.poker_eles = [...document.getElementsByClassName('pocker')]
+        this.poker_eles = [...document.getElementsByClassName("poker")];
         this.poker_eles.forEach((ele, index) => {
             ele.nums = index;
         });
@@ -135,16 +136,87 @@ const poker = {
             if (nums + 1 >= this.poker_eles.length) {
                 nums = 0;
                 ele.style.transition = "";
-            }
-            else {
+            } else {
                 nums += 1;
-                ele.style.transition = "transform 0.3s ease-in-out";
+                ele.style.transition = "transform 0.3s ease";
             }
             ele.style.zIndex = nums;
-            ele.style.transition = this.transform_datas[nums];
+            ele.style.transform = this.transform_datas[nums];
             ele.nums = nums;
         });
-    }
+    },
 };
 poker.init();
+// 初始化
+Promise.all(poker.imgs.map(img => img.decode())).then(() => {
+    poker.move();
+});
+// end
+
+alphaReturntop.onclick = function () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
+// 实现点击个人图层, 显示弹出层, 并且实现点击关闭按钮, 可以隐藏弹出层
+// --start--
+// 获取personalBox的对象
+var personalBox = document.querySelector(".personalBox");
+// console.log(personalBox);
+// 获取.personalBox-info对应的dom对象
+var personalBoxInfo = document.querySelector(".detail-content");
+// console.log(personalBoxInfo);
+// 获取关闭按钮的对象
+var personalBoxInfoClose = document.querySelector(".personalBox-info-close");
+// console.log(personalBox-info-close);
+
+// 给tips绑定鼠标点击事件
+personalBox.onclick = function () {
+    // 显示适龄提示弹出
+    personalBox.style.zIndex = "100";
+    personalBoxInfo.style.opacity = "1";
+    // /* 背景遮罩 */
+    personalBoxInfo.style.background = "rgba(0,0,0,0.7)";
+    // 设置body对象的css样式overflow="hidden"
+    document.body.style.overflow = "hidden";
+    // 上面那个是阻止默认滚动行为
+}
+
+// 给关闭按钮设置鼠标点击事件
+personalBoxInfoClose.onclick = function () {
+    // console.log("点击了关闭按钮");
+    // 隐藏适龄提示弹出
+    personalBox.style.zIndex = "22";
+    personalBoxInfo.style.opacity = "0";
+    // 设置body对象的css样式overflow=""
+    document.body.style.overflow = "";
+}
+
+personalBoxInfo.onclick = function (e) {
+    // e是js事件触发以后产生的一个事情对象
+    // e.target可以获取当前触发事件的目标对象
+    // console.log(e.target);
+
+    // 判断当前触发事件的目标对象是否含有class类名
+    // console.log(e.target.classList.contains(""));
+    // 获取的值是布尔类型
+    if (e.target.classList.contains("personalBox-info")) {
+        // 隐藏适龄提示弹出层
+        personalBox.style.zIndex = "22";
+        personalBoxInfo.style.opacity = "0";
+        // 设置body对象的css样式overflow:""
+        document.body.style.overflow = "";
+    }
+}
+// --end--
+
+// 顶部导航栏的搜索框
+// start
+var myinput = document.querySelector("#myinput");
+var mybtn = document.querySelector("#mybtn");
+
+// 添加事件监听器, 当输入发生的时候触发
+myinput.addEventListener("input", function () {
+    var myinputValue = myinput.value;
+    mybtn.href = "https://www.bing.com/search?q=" + myinputValue;
+})
 // end

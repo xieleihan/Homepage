@@ -39,7 +39,7 @@ img {
 /* 设置整个页面整个字体相关样式 */
 body {
     font-size: 14px;
-    font-family: "PingFang SC", "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
+    font-family: "PingFang SC","zk", "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
     /* 设置行高为1.5倍 */
     line-height: 1.5;
     /* 设置页面最小宽度 */
@@ -75,6 +75,12 @@ a {
     font-family: 'zk';
     /* 自定义字体名称 */
     src: url('/font-family/zk.ttf') format('truetype');
+}
+
+
+/* html5特性 实现滑动的平滑滚动 */
+html {
+    scroll-behavior: smooth;
 }
 
 /* end */

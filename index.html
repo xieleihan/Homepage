@@ -36,13 +36,20 @@
         <div class="nav fl">
             <ul class="clean">
                 <!-- 导航栏,可以根据自己喜欢的去添加 -->
-                <li><a href="#" class="active">项目</a></li>
-                <li><a href="#">文章</a></li>
-                <li><a href="#">技能</a></li>
+                <li><a href="#pages" class="active">项目</a></li>
+                <li><a href="#article">文章</a></li>
+                <li><a href="#personal-skills">技能</a></li>
             </ul>
         </div>
         <!-- 右部分 -->
         <div class="header-right fr">
+            <!-- 搜索栏 -->
+            <div class="search clean">
+                <form>
+                    <input type="text" placeholder="这是必应" class="searchInput fl" id="myinput"/>
+                    <a href="#" class="searchBtn fr" id="mybtn">搜索</a>
+                </form>
+            </div>
             <div class="header-blog">博客</div>
         </div>
     </div>
@@ -105,7 +112,7 @@
 
         <!-- 个人页面 -->
         <!-- start -->
-        <div class="pages">
+        <div class="pages" id="pages">
             <div class="pages-info">
                 <span class="pages-tips">小宇宙</span>
                 <br>
@@ -141,7 +148,7 @@
 
         <!-- 个人文章 -->
         <!-- start -->
-        <div class="article">
+        <div class="article" id="article">
             <div class="article-info">
                 <span class="article-tips">繁星</span>
                 <br>
@@ -186,7 +193,7 @@
 
         <!-- 个人技能 -->
         <!-- start -->
-        <div class="personal-skills">
+        <div class="personal-skills" id="personal-skills">
             <div class="personal-skills-box">
                 <div class="personal-skills-title">技能</div>
                 <div class="personal-skills-info">无限进步,永远少年</div>
@@ -243,28 +250,51 @@
     </div>
     <!-- end -->
 
+    <!-- 下面是新功能开发区,回到首页 -->
+    <div class="alpha" id="alphaReturntop">
+        <div class="alpha-box">
+            <div class="alpha-font">下面是新页面的建造,有些问题不可知,点击我回到顶部😊</div>
+        </div>
+    </div>
+
     <!-- 相册 -->
     <!-- start -->
     <div class="photos">
-        <div class="photos-box">
+        <div class="border-photos"></div>
+        <div class="container">
             <div class="photos-title">相册</div>
-            <div class="container">
-                <div class="pocker pocker-1">
-                    <img src="/images/photo-pocket-1.png" alt="">
-                </div>
-                <div class="pocker pocker-2">
-                    <img src="/images/photo-pocket-2.jpg" alt="">
-                </div>
-                <div class="pocker pocker-3">
-                    <img src="/images/photo-pocket-3.jpg" alt="">
-                </div>
-                <div class="pocker pocker-4">
-                    <img src="/images/photo-pocket-4.jpg" alt="">
-                </div>
-                <div class="pocker pocker-5" onclick="poker.move()">
-                    <img src="/images/photo-pocket-5.png" alt="">
-                </div>
+            <div class="poker poker1">
+                <img src="/images/photo-pocket-1.webp" />
             </div>
+            <div class="poker poker2">
+                <img src="/images/photo-pocket-2.webp" />
+            </div>
+            <div class="poker poker3">
+                <img src="/images/photo-pocket-3.webp" />
+            </div>
+            <div class="poker poker4">
+                <img src="/images/photo-pocket-4.webp" />
+            </div>
+            <div class="poker poker5">
+                <img src="/images/photo-pocket-5.webp" />
+            </div>
+            <!-- 下面暂时不加入 -->
+            <!-- <div class="poker poker6">
+                <img src="/images/photo-pocket-6.webp" />
+            </div>
+            <div class="poker poker7">
+                <img src="/images/photo-pocket-7.webp" />
+            </div>
+            <div class="poker poker8">
+                <img src="/images/photo-pocket-8.webp" />
+            </div>
+            <div class="poker poker9">
+                <img src="/images/photo-pocket-2.webp" />
+            </div>
+            <div class="poker poker10">
+                <img src="/images/photo-pocket-4.webp" /> -->
+            </div>
+            <div class="poker_top poker5" onclick="poker.move()"></div>
         </div>
     </div>
     <!-- end -->
@@ -332,6 +362,16 @@
         </div>
     </div>
     <!-- end -->
+
+    <!-- 个人盒子 -->
+    <div class="personalBox">
+        <img src="/images/hello.jpg" alt="" class="personalBox-img">
+    </div>
+    <div class="detail-content">
+        <img src="/images/personalBox-info.jpg" alt="" class="personalBox-info" />
+        <img src="/images/close.png" alt="" class="personalBox-info-close">
+    </div>
+    
 
 </body>
 <script src="/js/main.js"></script>

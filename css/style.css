@@ -12,7 +12,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 30;
     /* 最小宽度 */
     min-width: 1280px;
 }
@@ -76,11 +76,42 @@
 /* 右部分 */
 /* start */
 .header .header-right {
-    width: 150px;
+    width: 210px;
     height: 60px;
     position: absolute;
     top: 0px;
     right: 165px;
+}
+
+.header .header-right .search{
+    width: 260px;
+    height: 60px;
+    position: absolute;
+    top: 15px;
+    right: 230px;
+}
+
+.header .header-right .search .searchInput{
+    width: 200px;
+    height: 30px;
+    border: 2px soild #ccc;
+    border-radius: 30px;
+    opacity: 0.75;
+}
+
+.header .header-right .search .searchBtn{
+    width: 50px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #4e6ef2;
+    color: white;
+    font-family: "PingFang SC","zk";
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 60px;
 }
 
 .header .header-right .header-blog {
@@ -900,6 +931,7 @@
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.834);
     border-radius: 30px;
+    z-index: 22;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-title {
@@ -925,10 +957,14 @@
 .main .personal-skills .personal-skills-box .personal-skills-lists {
     width: 80%;
     height: 80%;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* position: absolute; */
+    /* top: 55%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list {
@@ -1153,79 +1189,113 @@
     color: white;
 }
 
-.photos {
-    width: 100%;
-    height: 308px;
-    position: relative;
-    background-color: #f5f5f7;
-    display: flex;
+.alpha{
+    width:100%;
+    height: 300px;
 }
 
-.photos .photos-box {
-    width: 90%;
-    height: 90%;
+.alpha .alpha-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.alpha .alpha-box .alpha-font{
+    font-size: 20px;
+    font-family: "PingFang SC","zk";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
 }
 
-.photos .photos-box .photos-title {
-    font-size: 32px;
-    font-weight: bold;
-    font-family: "PingFang SC","zk";
-    color: black;
-    opacity: 0.85;
-    top: 16.5px;
-    left: 45px;
-    position: absolute;
-}
-
-.photos .photos-box .container{
-    position: absolute;
+.photos {
     width: 100%;
-    height: 10rem;
-    top: 30%;
-    left: auto;
+    height: 800px;
+    background-color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.photos .photos-box .container .pocker{
+.container {
     position: absolute;
-    width: 20%;
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    transform-origin: left;
+    width: 35%;
+    height: 35%;
+    margin-bottom: 1rem;
 }
 
-.photos .photos-box .container .pocker img{
+.photos .container .photos-title{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -25%;
+    left: -65%;
+    font-size: 28px;
+    font-family: "PingFang SC","zk";
+}
+
+.photos .border-photos{
+    display: flex;
+    width: 70%;
+    height: 75%;
+    /* dashed是虚线边框 */
+    border: 20px dashed #ccc;
+    border-radius: 30px;
+    z-index: 5;
+}
+
+.poker,
+.poker_top {
+    position: absolute;
+    width: 20rem;
+    height: 26rem;
+    border: 0.15rem solid #fff;
+    border-radius: 1.5rem;
+    background-color: #17f700;
+    transform-origin: bottom left;
+    overflow: hidden;
+}
+
+.poker img {
     position: relative;
     width: 100%;
-    height: 100%;
-    /* 图片自适应 */
-    object-fit: cover;
 }
 
-.photos .photos-box .container .pocker-1{
-    transform: translate(0%, 0%);
-    transition: all .3s;
+.poker_top {
+    /* background-color: #fff; */
+    background: url('/images/next.png');
+    background-size: cover;
+    transition: 0.3s ease;
+    cursor: pointer;
+    z-index: 22;
 }
-.photos .photos-box .container .pocker-2 {
-    transform: translate(80%,0%);
-    transition: all .3s;
+
+.poker_top:hover {
+    background-color: #aaa;
 }
-.photos .photos-box .container .pocker-3 {
-    transform: translate(160%, 0%);
-    transition: all .3s;
+
+.poker1 {
+    transform: rotate(-10deg);
 }
-.photos .photos-box .container .pocker-4 {
-    transform: translate(240%, 0%);
-    transition: all .3s;
+
+.poker2 {
+    transform: rotate(-6deg) translate(35%, -12%);
 }
-.photos .photos-box .container .pocker-5 {
-    transform: translate(320%, 0%);
-    transition: all .3s;
+
+.poker3 {
+    transform: rotate(-2deg) translate(65%, -19%);
 }
+
+.poker4 {
+    transform: rotate(2deg) translate(95%, -26%);
+}
+
+.poker5 {
+    transform: rotate(11deg) translate(100%, -5%);
+}
+
 /* 7end */
 
 /* 未完待续 */
@@ -1314,7 +1384,7 @@
 
 .footer .footer-box .footer-box-right {
     font-size: 14px;
-    font-family: "PingFang SC","zk";
+    font-family: "PingFang SC", "zk";
     font-weight: bold;
     color: #00001e;
     opacity: 0.6;
@@ -1439,5 +1509,91 @@
 }
 
 /* :end */
+
+/* 个人盒子 */
+/* start */
+.personalBox{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 21;
+    cursor: pointer
+}
+
+.personalBox .personalBox-img{
+    width: 100%;
+    height: 100%;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+.personalBox:hover .personalBox-img {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.detail-content {
+    /* 这是固定定位 */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* 给个图层堆叠顺序,这个要最大 */
+    z-index: 20;
+    /* display: none; */
+    opacity: 0;
+    transition: all 1s;
+}
+
+.detail-content .personalBox-info {
+    width: 650px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* 设置偏移量 */
+    transform: translate(-50%, -50%);
+}
+
+.detail-content .personalBox-info-close {
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    right: 50%;
+    top: 50%;
+    cursor: pointer;
+    transform: translate(680%,-355%);
+}
+
+/* .personalBox .personalBox-info{
+    width: 60%;
+    height: 40%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    display: none;
+}
+
+.personalBox .personalBox-info-close{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 25%;
+    left: 80%;
+    cursor: pointer; 
+    display: none;
+} */
+/* end */
 
 /* 1end */
