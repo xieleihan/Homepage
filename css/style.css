@@ -1,371 +1,377 @@
-/* Copyright© 2024 By SouthAki All Rights Reserved. */
-/* 业务逻辑代码 */
-/* 1start */
+/*业务样式*/
+/* 备注:顶部导航栏的z-index是30 */
 
-/* 顶部导航栏 */
+/* 侧边栏 */
 /* start */
-.header {
-    height: 60px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, .8);
-    /* 顶部导航栏需要固定定位在最上面 */
+.sideBar {
+    width: 50px;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(6px);
     z-index: 30;
-    /* 最小宽度 */
-    min-width: 1280px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    transition: all .5s;
 }
 
-/* end */
+.sideBar .sideBar-box {
+    width: 50px;
+    height: 90%;
+    margin: 5vh 0 5vh 0;
+    position: relative;
+}
 
-/* 左部分 */
-/* start */
-.header .header-left {
-    width: 150px;
-    height: 27px;
+.sideBar .sideBar-box .sideBar-logo img {
+    height: 25px;
+    width: 25px;
+    display: block;
+    margin: 0 auto;
+}
+
+.sideBar .sideBar-box .sideBar-logo span {
+    display: block;
+    width: 50px;
+    writing-mode: vertical-lr;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    padding-top: 10px;
+}
+
+.sideBar .sideBar-box .sideBar-nav {
+    height: 50%;
+    width: 50px;
     position: absolute;
-    top: 16.5px;
-    left: 165px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
-.header .header-left img {
+.sideBar .sideBar-box .sideBar-nav ul {
+    padding-top: 10px;
+}
+
+.sideBar .sideBar-box .sideBar-nav ul li {
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.sideBar .sideBar-box .sideBar-nav ul li:hover {
+    background-color: #5f85ff;
+    color: white;
+    /* border: 3px solid white; */
+    outline: 3px solid white;
+}
+
+.sideBar .sideBar-box .sideBar-search {
     width: 25px;
     height: 25px;
-    float: left;
-}
-
-.header .header-left p {
-    color: white;
-    float: right;
-    margin-top: 2px;
-    margin-left: 8px;
-    font-size: 14px;
-    font-family: "PingFang SC";
-}
-
-/* end */
-
-/* 导航栏部分 */
-/* start */
-.header .nav {
-    width: 200px;
-    height: 60px;
-    position: relative;
-    top: 0;
-    left: 45%;
-}
-
-.header .nav ul {
-    height: 60px;
-    width: 200px;
-    line-height: 60px;
-}
-
-.header .nav ul li {
-    color: white;
-    float: left;
-    width: 40px;
-    margin-right: 20px;
-    font-size: 14px;
-    font-family: "PingFang SC";
-}
-
-/* end */
-
-/* 右部分 */
-/* start */
-.header .header-right {
-    width: 210px;
-    height: 60px;
     position: absolute;
-    top: 0px;
-    right: 165px;
+    bottom: 0;
+    margin-bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
-.header .header-right .search{
-    width: 260px;
-    height: 60px;
+.sideBar .sideBar-box .sideBar-search span {
+    /* color: black; */
+    font-size: 25px;
+    font-family: "PingFang SC", "zk";
+}
+
+.sideBar .sideBar-box .sideBar-setting {
     position: absolute;
-    top: 15px;
-    right: 230px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
 }
 
-.header .header-right .search .searchInput{
-    width: 200px;
-    height: 30px;
-    border: 2px soild #ccc;
-    border-radius: 30px;
-    opacity: 0.75;
+.sideBar .sideBar-box .sideBar-setting span {
+    /* color: black; */
+    font-size: 18px;
+    font-family: "PingFang SC", "zk";
 }
 
-.header .header-right .search .searchBtn{
-    width: 50px;
-    height: 30px;
-    border: 2px solid #ccc;
+.sideBar .sideBar-box .sideBar-setting .box {
+    height: 200px;
+    width: 70px;
+    /* background-color: #ccc; */
+    position: absolute;
+    left: 20px;
+    bottom: -20px;
+    display: none;
+}
+
+.sideBar .sideBar-box .sideBar-setting .box .smallprompt {
+    /* position: absolute;
+    bottom: -20px;
+    left: 45px; */
+    width: 46px;
+    height: 200px;
+    background: hsla(0, 0%, 100%, 0.7);
+    backdrop-filter: blur(6px);
     border-radius: 20px;
-    background-color: #4e6ef2;
+}
+
+.sideBar .sideBar-box .sideBar-setting .box .prompt {
+    height: 200px;
+    width: 23px;
+    position: relative;
+}
+
+.sideBar .sideBar-box .sideBar-setting .box .prompt .triangle {
+    position: absolute;
+    bottom: 10px;
+    left: -16px;
+    height: 0px;
+    width: 0px;
+    border: 20px;
+    border-color: transparent #ffffffb3 transparent transparent;
+    border-style: solid;
+
+}
+
+/* end */
+
+/* 主盒子 */
+.main .poster {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.main .poster .poster-box {
+    width: 100%;
+    height: 100%;
+    background: url('/images/poster-bg.webp');
+    /* fixed:背景图片不会随着页面的滚动而滚动 */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .poster .poster-box .poster-box-top {
+    width: 70vw;
+    height: 30vh;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-title .title-box {
+    width: 660px;
+    margin: 0 auto;
+    animation: tying 2s steps(22), blnk .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-title {
+    font-size: 28px;
     color: white;
-    font-family: "PingFang SC","zk";
+    text-align: center;
+
+    height: 84px;
+    width: 70vw;
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    bottom: 0;
+}
+
+/* .main .poster .poster-box .poster-box-top .poster-box-top-title .title {
+    height: 42px;
+    text-align: right;
+    color: transparent;
+    animation: hue 4s linear infinite;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 128), rgb(0, 255, 255), rgb(0, 128, 255), rgb(0, 0, 255), rgb(128, 0, 255), rgb(255, 0, 255), rgb(255, 0, 128));
+    -webkit-background-clip: text;
+} */
+
+/* 彩色文字效果方法 */
+/* @keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(-360deg);
+    }
+} */
+
+/* 顶部title文字打印效果 */
+.main .poster .poster-box .poster-box-top .poster-box-top-title p {
+    line-height: 42px;
+}
+
+/* 打印动画方法 */
+@keyframes tying {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 45vw;
+    }
+}
+
+@keyframes blnk {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* 时间框 */
+.main .poster .poster-box .poster-box-top .poster-box-top-time {
+    width: 70vw;
+    height: 20vh;
+    /* position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-time ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-time ul li {
+    height: 100px;
+    width: 100px;
+    /* background-color: rgba(255,255,255,0.7); */
+    /* margin-right: 10px; */
+    border-radius: 50%;
+    line-height: 100px;
+    color: white;
+    font-size: 72px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'timefont';
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-time ul li:nth-child(3) {
+    height: 0px;
+    width: 0px;
+    font-size: 28px;
+    line-height: 100px;
+}
+
+.main .poster .poster-box .poster-box-top .poster-box-top-time ul li:last-child {
+    margin-right: 0;
+}
+
+.main .poster .poster-box .poster-box-bottom {
+    width: 45vw;
+    height: 40px;
+    /* visibility: hidden; */
+    display: none;
+}
+
+.main .poster .poster-box .poster-box-bottom .searchInput {
+    width: 90%;
+    height: 40px;
+    border-radius: 30px 0 0 30px;
+}
+
+.main .poster .poster-box .poster-box-bottom .searchBtn {
+    width: 10%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #5f85ff;
+    color: white;
+    border-radius: 0 30px 30px 0;
+}
+
+/* 个人信息按钮 */
+.main .personalInformationButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    border: 2px solid #ccc;
+    opacity: 0.5;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.main .personalInformationButton:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.main .personalInformationButton img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.main .personalInformationButton .returnTop {
+    position: absolute;
+    top: -55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5f85ff;
+    display: block;
+    width: 30px;
+    height: 30px;
     text-align: center;
     line-height: 30px;
-    position: absolute;
-    top: 0;
-    right: 60px;
-}
-
-.header .header-right .header-blog {
+    border-radius: 5px;
     color: white;
-    line-height: 60px;
-    font-size: 14px;
-    font-family: "PingFang SC";
+    opacity: 0;
+    transition: all 2s;
 }
 
-/* end */
-
-/* 海报墙部分 */
-/* 2start */
-.main .poster {
-    /* 定义最小宽度值和最大宽度值 */
-    width: 100%;
-    min-width: 1280px;
-    /* 这里可以替换自己想要的背景图片 */
-    background: url('/images/poster-bg.png');
-    /* 这里是让背景图片彻底填充满页面 */
-    background-size: cover;
-    /* 这里给的高度的值是,当前可视化页面的高度,vh就是如此 */
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+.main .personalInformationButton:hover .returnTop {
+    opacity: 1;
 }
 
-.main .poster .poster-top {
-    width: 1200px;
-    height: 450px;
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    background-color: #f5f5f7bc;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    /* z-index: 10; */
-}
-
-.main .poster .poster-top .poster-top-left {
-    width: 630px;
-    height: 356px;
-    position: absolute;
-    top: 10%;
-    left: 40px;
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-title {
-    width: 630px;
-    height: 75px;
-    font-size: 70px;
-    font-weight: 400;
-    color: #00001e;
-    line-height: 75px;
-    font-weight: bold;
-    font-family: "PingFang SC";
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-title-small {
-    width: 630px;
-    height: 68px;
-    display: block;
-    font-size: 28px;
-    font-weight: 400;
-    color: #00001e;
-    line-height: 34px;
-    margin-top: 28px;
-    font-weight: bold;
-}
-
-/* 移入颜色变成67,117,255 */
-.main .poster .poster-top .poster-top-left .poster-top-left-about {
-    width: 630px;
-    height: 112px;
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-left-about .about {
-    display: flex;
-    width: 136px;
-    height: 48px;
-    background-color: black;
-    color: white;
-    padding: 0 36px;
-    margin-top: 64px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 16px;
-    font-family: "PingFang SC";
-    transition: all .5s;
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-left-about .about:hover {
-    display: flex;
-    width: 136px;
-    height: 48px;
-    background-color: rgb(67, 117, 255);
-    color: white;
-    padding: 0 36px;
-    margin-top: 64px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 16px;
-    font-family: "PingFang SC";
-    transition: all .5s;
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-left-about .icon {
-    display: flex;
-    width: 52px;
-    height: 48px;
-    background-color: black;
-    color: white;
-    padding: 0 36px;
-    margin-top: 64px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 16px;
-    font-family: "PingFang SC";
-    position: absolute;
-    bottom: -2px;
-    left: 150px;
-    transition: all .5s;
-}
-
-.main .poster .poster-top .poster-top-left .poster-top-left-about .icon:hover {
-    display: flex;
-    width: 52px;
-    height: 48px;
-    background-color: rgb(67, 117, 255);
-    color: white;
-    padding: 0 36px;
-    margin-top: 64px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 16px;
-    font-family: "PingFang SC";
-    position: absolute;
-    bottom: -2px;
-    left: 150px;
-    transition: all .5s;
-}
-
-.main .poster .poster-top-right {
-    width: 420px;
-    height: 420px;
-    position: absolute;
-    top: 3%;
-    right: 40px;
-}
-
-.main .poster .poster-top .poster-top-right img {
-    width: 405px;
-    height: 405px;
-    margin-top: 7.5px;
-    margin-left: 7.5px;
-    border-radius: 30px;
-    animation: floating 4s ease-in-out infinite;
-    pointer-events: none;
-    object-fit: cover;
-}
-
-@keyframes floating {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(0, 10px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-/* 注意这是海报墙下面的框框 */
-/* 跟top没关系 */
-/* 3start */
-.main .poster .poster-top .poster-bottom {
-    width: 1200px;
-    height: 200px;
-    position: absolute;
-    top: 140%;
-    left: 50%;
-    background-color: #f5f5f7bc;
-    border-radius: 20px;
-    transform: translate(-50%, -50%);
-}
-
-.main .poster .poster-top .poster-bottom span {
-    display: flex;
-    font-size: 15px;
-    font-family: "PingFang SC";
-    text-align: center;
-    margin: 0 5%;
-    margin-top: 18px
-}
-
-.main .poster .poster-top .poster-bottom img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-left: 50%;
-    margin-top: -5px;
-    border: 4px solid white;
-}
-
-.main .poster .poster-top .poster-bottom .poster-bottom-title {
-    position: absolute;
-    top: 62%;
-    left: 50%;
-    transform: translateX(-70%);
-    font-family: "PingFang SC";
-}
-
-.main .poster .poster-top .poster-bottom .poster-bottom-title-small {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translateX(-53%);
-    font-size: 14px;
-    font-family: "PingFang SC";
-    opacity: 0.6;
-}
-
-/* 3end */
-
-/* 下移图标 */
-/* 4start */
-.main .poster .poster-top .down-type {
+.main .poster .poster-box .down-type {
     width: 26px;
     position: absolute;
-    bottom: -90%;
+    bottom: 20px;
     left: 50%;
+    transform: translateX(-50%);
 }
 
-.main .poster .poster-top .down-type img {
+.main .poster .poster-box .down-type img {
     /* 去掉图片边框用 */
     display: block;
 }
 
-.main .poster .poster-top .down-type .down-type-1 {
+.main .poster .poster-box .down-type .down-type-1 {
     animation: arrow 1.5s infinite 0s;
 }
 
-.main .poster .poster-top .down-type .down-type-2 {
+.main .poster .poster-box .down-type .down-type-2 {
     animation: arrow 1.5s infinite 0.5s;
 }
 
-.main .poster .poster-top .down-type .down-type-3 {
+.main .poster .poster-box .down-type .down-type-3 {
     animation: arrow 1.5s infinite 1s;
 }
 
@@ -385,164 +391,391 @@
     }
 }
 
-/* 4end */
-
-.main .poster .poster-name {
-    color: white;
-    position: absolute;
-    width: 700px;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-family: "zk";
-    animation: tying 2s steps(22), blnk .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
+.main .poster .poster-box .poster-box-top .pl {
+    display: block;
+    width: 70vw;
+    height: 3.375em;
 }
 
-@keyframes tying {
+.main .poster .poster-box .poster-box-top .pl__arrows,
+.main .poster .poster-box .poster-box-top .pl__ring-rotate,
+.main .poster .poster-box .poster-box-top .pl__ring-stroke,
+.main .poster .poster-box .poster-box-top .pl__tick {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.main .poster .poster-box .poster-box-top .pl__arrows {
+    animation-name: arrows42;
+    transform: rotate(45deg);
+    transform-origin: 16px 52px;
+}
+
+.main .poster .poster-box .poster-box-top .pl__ring-rotate,
+.main .poster .poster-box .poster-box-top .pl__ring-stroke {
+    transform-origin: 80px 80px;
+}
+
+.main .poster .poster-box .poster-box-top .pl__ring-rotate {
+    animation-name: ringRotate42;
+}
+
+.main .poster .poster-box .poster-box-top .pl__ring-stroke {
+    animation-name: ringStroke42;
+    transform: rotate(-45deg);
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick {
+    animation-name: tick42;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(2) {
+    animation-delay: -1.75s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(3) {
+    animation-delay: -1.5s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(4) {
+    animation-delay: -1.25s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(5) {
+    animation-delay: -1s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(6) {
+    animation-delay: -0.75s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(7) {
+    animation-delay: -0.5s;
+}
+
+.main .poster .poster-box .poster-box-top .pl__tick:nth-child(8) {
+    animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
     from {
-        width: 0;
+        transform: rotate(45deg);
     }
 
     to {
-        width: 700px;
+        transform: rotate(405deg);
     }
 }
 
-@keyframes blnk {
+@keyframes ringRotate42 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes ringStroke42 {
+
+    from,
+    to {
+        stroke-dashoffset: 452;
+        transform: rotate(-45deg);
+    }
+
     50% {
-        border-color: transparent;
+        stroke-dashoffset: 169.5;
+        transform: rotate(-180deg);
     }
 }
 
-/* 2end */
+@keyframes tick42 {
 
-/* 个人页面 */
-/* 5start */
-.main .pages {
-    min-height: 800px;
+    from,
+    3%,
+    47%,
+    to {
+        stroke-dashoffset: -12;
+    }
+
+    14%,
+    36% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 4end */
+
+
+/* 个人信息区域 */
+.main .homepage {
+    width: 100vw;
+    height: 100vh;
+    min-height: 700px;
+}
+
+.main .homepage .homepage-box {
     width: 100%;
-    background: url('/images/pages-bg.jpeg');
+    height: 100%;
+    background: url('/images/poster-bg.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    /* 父元素相对定位 */
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 页面内容 */
-.main .pages .pages-info {
-    max-width: 1200px;
-    width: 90%;
-    top: 20%;
-    left: 50%;
-    /* 子元素绝对定位 */
-    position: absolute;
-    /* 设置偏移量 */
-    transform: translate(-50%, -50%);
+.main .homepage .homepage-box .homepage-box-top {
+    width: 1200px;
+    height: 450px;
+    background-color: #ffffffb3;
+    border-radius: 30px;
+
 }
 
-.main .pages .pages-info .pages-tips {
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left {
+    width: 630px;
+    height: 356px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .title {
+    font-size: 70px;
+    color: #00001e;
+    line-height: 1em;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .info {
+    font-size: 70px;
+    color: #00001e;
+    line-height: 1em;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .smallinfo {
+    font-size: 30px;
+    color: #00001e;
+    padding-top: 28px;
+    line-height: 1em;
+    display: block;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .homepage-about {
+    margin-top: 20px;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .homepage-about .about {
+    width: 136px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    padding: 0 36px;
+    line-height: 48px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: all .5s;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .homepage-about .about:hover {
+    background-color: #3478f5;
+    transition: all .5s;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .homepage-about .icon {
+    font-size: 16px;
+    width: 40px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    padding: 0 36px;
+    line-height: 48px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-left .homepage-about .icon:hover {
+    background-color: #3478f5;
+    transition: all .5s;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-right {
+    width: 420px;
+    height: 420px;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+
+.main .homepage .homepage-box .homepage-box-top .homepage-box-top-right img {
+    width: 405px;
+    height: 405px;
+    border-radius: 20px;
+    border: 2px solid white;
+    animation: floating 4s ease-in-out infinite;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+/* 动画效果方法 */
+@keyframes floating {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.main .homepage .homepage-box .homepage-box-bottom {
+    width: 1200px;
+    height: 200px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #ffffffb3;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-title {
+    width: 100%;
+    margin-top: 15px;
+    padding: 0 50px 0;
+}
+
+.main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-info {
+    margin-bottom: 15px;
+    color: #5b595a;
+}
+
+.main .project {
+    width: 100vw;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/pages-bg.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main .project .project-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 10vh;
+    flex-direction: column;
+}
+
+.main .project .project-box .project-top {
+    width: 70%;
+    height: 30%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .project .project-box .project-top .tips {
     color: #e5a80d;
     font-size: 14px;
-    font-family: "PingFang SC";
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.main .pages .pages-info .pages-title {
+.main .project .project-box .project-top .project-title {
     font-size: 56px;
     color: white;
     font-weight: bold;
     text-align: center;
     line-height: 60px;
     margin-top: 12px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-37.5%);
-    font-family: "PingFang SC";
 }
 
-.main .pages .pages-info .pages-about {
-    opacity: 0.8;
-    position: absolute;
-    left: 50%;
-    top: 500%;
-    transform: translate(-50%, -50%);
-}
-
-.main .pages .pages-info .pages-about-info {
+.main .project .project-box .project-top .project-about {
     font-size: 16px;
     color: white;
-    margin: 0 0 32px 0;
-    font-family: "PingFang SC";
+    margin: 10px 0 32px 0;
+    opacity: 0.8;
 }
 
-.main .pages .pages-info .pages-link {
-    position: absolute;
-    top: 650%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.main .pages .pages-info .pages-link .pages-buttom {
+.main .project .project-box .project-top .project-link .project-buttom {
     padding: 8px 26px;
     background: white;
     color: black;
     font-size: 16px;
-    font-family: "PingFang SC";
-    border-radius: 26px;
-    transition: ease-in-out 0.3s;
     white-space: nowrap;
-    font-family: "PingFang SC";
+    border-radius: 26px;
+    transition: all .5s;
 }
 
-.main .pages .pages-info .pages-link .pages-buttom:hover {
-    padding: 8px 26px;
+.main .project .project-box .project-top .project-link .project-buttom:hover {
     background: black;
     color: white;
-    font-size: 16px;
-    font-family: "PingFang SC";
-    border-radius: 26px;
-    transition: ease-in-out 0.3s;
-    white-space: nowrap;
-    font-family: "PingFang SC";
+    transition: all .5s;
 }
 
-.main .pages .pages-info .pages-link .second-link {
+.main .project .project-box .project-top .project-link .second-link {
     color: black;
-    opacity: 1;
     font-size: 14px;
-    margin-left: 12px;
-    transition: ease-in-out 0.3s;
-    font-family: "PingFang SC";
+    margin-left: 14px;
 }
 
-.main .pages .pages-pic {
-    max-width: 968px;
-    width: 30%;
-    margin: auto;
-    will-change: transform;
-    transform: translate3d(-50%, 0px, 0px);
+.main .project .project-pic {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20vh; */
     transition: transform 2s cubic-bezier(0, 0, 0, 1) 0s;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
 }
 
-.main .pages .pages-pic .pages-pic-img {
+.main .project .project-pic img {
     width: 100%;
-    height: 100%;
 }
 
+/* 个人简化版页面 */
 /* 个人简化版页面 */
 .main .simplifypages {
     width: 100%;
     height: 308px;
     background: #f5f5f7;
     position: relative;
+    background-attachment: fixed;
 }
 
 .main .simplifypages .simplifypages-title {
@@ -550,7 +783,6 @@
     top: 16.5px;
     left: 165px;
     font-size: 32px;
-    font-family: "PingFang SC";
     font-weight: bold;
     margin-top: 10px;
 }
@@ -561,7 +793,6 @@
     margin-top: 15px;
     left: 165px;
     font-size: 14px;
-    font-family: "PingFang SC";
 }
 
 .main .simplifypages .simplifypages-content {
@@ -569,7 +800,6 @@
     height: 100px;
     position: relative;
     font-size: 14px;
-    font-family: "PingFang SC";
     margin-right: 10px;
 }
 
@@ -593,7 +823,6 @@
 
 .main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-word {
     font-size: 20px;
-    font-family: "PingFang SC";
     font-weight: bold;
     margin: 0, 0, 8px, 0;
     color: #00001e;
@@ -609,12 +838,10 @@
     border-radius: 5px;
     width: 32px;
     text-align: center;
-    font-family: "PingFang SC";
 }
 
 .main .simplifypages .simplifypages-content .simplifypages-content-right p {
     font-size: 14px;
-    font-family: "PingFang SC";
     opacity: 0.85;
 }
 
@@ -628,7 +855,6 @@
     position: absolute;
     top: 70%;
     transition: ease-in-out 0.3s;
-    font-family: "PingFang SC";
 }
 
 .main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link:hover {
@@ -642,7 +868,6 @@
     top: 70%;
     opacity: 0.85;
     transition: ease-in-out 0.3s;
-    font-family: "PingFang SC";
 }
 
 .main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link-2 {
@@ -656,7 +881,6 @@
     top: 70%;
     left: 50%;
     transition: ease-in-out 0.3s;
-    font-family: "PingFang SC";
 }
 
 .main .simplifypages .simplifypages-content .simplifypages-content-right .simplifypages-link-2:hover {
@@ -671,38 +895,39 @@
     left: 50%;
     opacity: 0.85;
     transition: ease-in-out 0.3s;
-    font-family: "PingFang SC";
 }
 
-/* 5end */
-
-/* 个人文章 */
-/* 6start */
 .main .article {
-    min-height: 800px;
+    min-height: 700px;
+    max-height: 1000px;
     width: 100%;
-    background: url('/images/article-bg.jpg');
+    height: 100vh;
+    background: url('/images/article-bg.webp');
     background-size: cover;
-    /* 父元素相对定位 */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center; */
     position: relative;
+    background-attachment: fixed;
 }
 
 /* 页面内容 */
 .main .article .article-info {
     max-width: 1200px;
     width: 90%;
-    top: 20%;
-    left: 50%;
-    /* 子元素绝对定位 */
-    position: absolute;
-    /* 设置偏移量 */
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 10vh;
 }
 
 .main .article .article-info .article-tips {
-    color: white;
+    color: #e5a80d;
     font-size: 14px;
-    font-family: "PingFang SC";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -714,36 +939,25 @@
     font-weight: bold;
     text-align: center;
     line-height: 60px;
-    margin-top: -10px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-37.5%);
-    font-family: "PingFang SC";
+    margin-top: 10px;
+    padding-left: 5%;
+    display: block;
 }
 
 .main .articles .article-info .article-about {
     opacity: 0.8;
-    position: absolute;
-    left: 50%;
-    top: 500%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 .main .article .article-info .article-about-info {
     font-size: 16px;
     color: white;
     margin: 0 0 32px 0;
-    position: absolute;
-    top: 390%;
-    left: 44%;
-    font-family: "PingFang SC";
+
 }
 
 .main .article .article-info .article-link {
-    position: absolute;
-    top: 650%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 .main .article .article-info .article-link .article-buttom {
@@ -751,7 +965,7 @@
     background: white;
     color: black;
     font-size: 16px;
-    font-family: "PingFang SC";
+
     border-radius: 26px;
     transition: ease-in-out 0.3s;
     white-space: nowrap;
@@ -762,7 +976,6 @@
     background: black;
     color: white;
     font-size: 16px;
-    font-family: "PingFang SC";
     border-radius: 26px;
     transition: ease-in-out 0.3s;
     white-space: nowrap;
@@ -773,20 +986,20 @@
     opacity: 1;
     font-size: 14px;
     margin-left: 12px;
-    font-family: "PingFang SC";
     transition: ease-in-out 0.3s;
 }
 
 .main .article .article-pic {
-    max-width: 968px;
     width: 30%;
-    margin: auto;
     will-change: transform;
-    transform: translate3d(-50%, 0px, 0px);
     transition: transform 2s cubic-bezier(0, 0, 0, 1) 0s;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
     position: absolute;
-    bottom: -12%;
+    bottom: -50px;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 .main .article .article-pic .article-pic-img {
@@ -794,570 +1007,404 @@
     height: 100%;
 }
 
-/* 个人简化版页面 */
 .main .simplifyarticle {
-    width: 100%;
+    width: 100vw;
     height: 308px;
-    background: #f5f5f7;
+    background-color: white;
+    background-attachment: fixed;
+}
+
+.main .simplifyarticle .simplifyarticle-box {
+    width: 90%;
+    height: 20vh;
+    margin: 0 auto;
+    padding-left: 5%;
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-info {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content {
+    width: 19em;
+    height: 140px;
+    margin-right: 40px;
+    padding: 10px;
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content img {
+    width: 100px;
+    height: 100px
+}
+
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-content-right {
     position: relative;
 }
 
-.main .simplifyarticle .simplifyarticle-title {
-    position: absolute;
-    top: 16.5px;
-    left: 165px;
-    font-size: 32px;
-    font-family: "PingFang SC";
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-word {
+    font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.main .simplifyarticle .simplifyarticle-info {
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-word-redword {
     position: absolute;
-    top: 55px;
-    margin-top: 15px;
-    left: 165px;
-    font-size: 14px;
-    font-family: "PingFang SC";
+    top: -1px;
+    right: -45px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 0 5px;
 }
 
-.main .simplifyarticle .simplifyarticle-content {
-    width: 400px;
-    height: 100px;
-    position: relative;
-    font-size: 14px;
-    font-family: "PingFang SC";
-    margin-right: 20px;
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-link {
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #3478f5;
     display: inline-block;
-}
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 28px;
-    position: absolute;
-    top: 145%;
-    left: 40%;
-    margin-right: 10px;
-}
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right {
-    position: absolute;
-    top: 145%;
-    left: 80%;
-    width: 167px;
-    height: 100px;
-}
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-word {
-    font-size: 20px;
-    font-family: "PingFang SC";
-    font-weight: bold;
-    margin: 0, 0, 8px, 0;
-    color: #00001e;
-}
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .two {
-    font-size: 20px;
-    font-family: "PingFang SC";
-    font-weight: bold;
-    margin: 0, 0, 8px, 0;
-    color: #00001e;
-    width: 183px;
-}
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-word-redword {
-    position: absolute;
-    top: -10%;
-    right: -20%;
-    background: rgba(255, 0, 0, 0.693);
-    color: white;
-    font-size: 14px;
-    border-radius: 5px;
-    width: 32px;
+    width: 50px;
     text-align: center;
-    font-family: "PingFang SC";
+    transition: ease-in-out 0.3s;
 }
 
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right p {
-    font-size: 14px;
-    font-family: "PingFang SC";
-    opacity: 0.85;
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-link:hover {
+    background-color: #5f85ff;
+    transition: ease-in-out 0.3s;
 }
 
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-link {
-    width: 68px;
-    height: 30px;
-    background: #3478f5;
-    color: white;
-    padding: 6px 20px;
-    border-radius: 30px;
-    position: absolute;
-    top: 70%;
-    font-family: "PingFang SC";
+.main .simplifyarticle .simplifyarticle-box .simplifyarticle-box-bottom .simplifyarticle-content .simplifyarticle-link-2 {
+    font-size: 10px;
+    opacity: 0.8;
 }
-
-.main .simplifyarticle .simplifyarticle-content .simplifyarticle-content-right .simplifyarticle-link-2 {
-    width: 110px;
-    height: 30px;
-    color: rgba(60, 60, 67, 0.6);
-    padding: 6px 20px;
-    border-radius: 30px;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    font-family: "PingFang SC";
-}
-
-/* 6end */
 
 /* 个人技能页面 */
-/* 7start */
 .main .personal-skills {
+    width: 100vw;
+    height: 100vh;
     min-height: 800px;
-    width: 100%;
-    background: url('/images/personal-skills-bg.jpg');
+    background: url('/images/personal-skills-bg.webp');
+    background-repeat: no-repeat;
     background-size: cover;
-    /* 父元素相对定位 */
-    position: relative;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main .personal-skills .personal-skills-box {
     width: 90%;
-    height: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.834);
+    height: 80%;
+    margin: 0 auto;
+    background-color: #ffffffb3;
     border-radius: 30px;
-    z-index: 22;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-title {
     font-size: 32px;
-    font-family: "PingFang SC";
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    top: 16.5px;
-    left: 45px;
+    margin-top: 30px;
+    margin-left: 4%;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-info {
-    position: absolute;
-    top: 60px;
-    left: 45px;
-    font-family: "PingFang SC";
-    color: rgba(60, 60, 60, 0.6);
     font-size: 14px;
+    margin-top: 10px;
+    color: #000000b3;
+    margin-left: 4%;
 }
 
-/* 列表开始处 */
 .main .personal-skills .personal-skills-box .personal-skills-lists {
-    width: 80%;
-    height: 80%;
-    /* position: absolute; */
-    /* top: 55%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+    width: 100%;
+    height: 90%;
+    margin-top: 30px;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list {
     width: 30%;
-    height: 50%;
-    margin-left: 38px;
+    height: 40%;
+    border-radius: 20px;
     position: relative;
-    border-radius: 12px;
-    margin-top: 5px;
-    /* border: 5px solid white; */
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .name {
-    font-size: 16px;
-    font-family: "zk";
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    color: white;
-    z-index: 10;
-    position: absolute;
-    text-align: center;
-    left: 6px;
-    animation: typing 2s steps(22), blink 0s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 1px solid;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 460px;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+    background: url('/images/poster-bg.webp');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover {
-    width: 30%;
-    height: 50%;
-    margin-left: 38px;
+    outline: 5px solid white;
+    transform: scale(1.05);
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1 {
+    background: url('/images/article-bg.webp');
+    background-size: cover;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2 {
+    background: url('/images/personal-bg.webp');
+    background-size: cover;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info {
+    width: 90%;
+    height: 80%;
+    background-color: #ffffffb3;
+    border-radius: 20px;
     position: relative;
-    border-radius: 12px;
-    margin-top: 5px;
-    border: 5px solid white;
+    opacity: 0;
+    transition: all .5s;
+    z-index: 20;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-mask {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 12px;
-    /* 设置过渡属性 */
-    transition: all .3s;
-    z-index: 2;
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-info {
+    opacity: 1;
+    transition: all .5s;
+    z-index: 20;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-mask {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-left img {
+    width: 100px;
+    height: 100px;
     position: absolute;
-    border-radius: 12px;
-    left: 0;
-    top: 0;
-    /* 设置过渡属性 */
-    transition: all .3s;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-right {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-right span {
+    font-size: 28px;
+    display: block;
+    line-height: 1em;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-right p {
+    font-size: 10px;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-right a {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #3478f5;
+    transition: ease-in-out 0.3s;
+}
+
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info .list-info-right a:hover {
+    background-color: #5f85ff;
+    transition: ease-in-out 0.3s;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .hello-img {
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 65%;
-    left: 60%;
+    right: 30px;
+    bottom: 35px;
+    border-radius: 50%;
     opacity: 0;
-    transition: all .5s;
+    transition: all 2s;
+    z-index: 20;
 }
 
 .main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .hello-img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 65%;
-    left: 60%;
     opacity: 1;
-    transition: all 1s;
+    transition: all 2s;
+    z-index: 20;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1 {
-    background: url('/images/personal-bg.png');
-    background-size: cover;
-    transition: all .3s;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-1:hover {
-    background: url('/images/personal-bg.png') no-repeat center center/cover;
-    /* background-size: cover; */
-    /* 变形-缩放 */
-    transform: scale(1.05);
-    overflow: hidden;
-    transition: all .3s;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2 {
-    background: url('/images/article-bg.jpg');
-    background-size: cover;
-    transition: all .3s;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-2:hover {
-    background: url('/images/article-bg.jpg') no-repeat center center/cover;
-    transition: all .3s;
-    /* 变形-缩放 */
-    transform: scale(1.05);
-    overflow: hidden;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-3 {
-    background: url('/images/poster-bg.png');
-    background-size: cover;
-    transition: all .3s;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list-3:hover {
-    background: url('/images/poster-bg.png') no-repeat center center/cover;
-    transition: all .3s;
-    /* 变形-缩放 */
-    transform: scale(1.05);
-    overflow: hidden;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:first-child {
-    margin-right: 0px;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:last-child {
-    margin-left: 35px;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list p {
-    font-size: 20px;
-    color: white;
-    font-family: "PingFang SC";
-    text-align: center;
-    justify-content: center;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info {
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    border-radius: 15px;
-    opacity: 0.85;
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-mask {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .2s;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-info {
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    border-radius: 15px;
-    opacity: 0.85;
+.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list:hover .list-mask {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    transition: all .2s;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 20px;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-left img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 20%;
-    left: 5px;
+/* 开发区样式 */
+.alpha {
+    width: 100%;
+    height: 10vh;
+    background: white;
+    background-attachment: fixed;
 }
 
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right {
-    margin-right: 40px;
-    margin-top: 20px;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right span {
-    font-size: 28px;
-    font-family: "PingFang SC";
-    color: black;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right p {
-    font-size: 14px;
-    font-family: "PingFang SC";
-    margin-top: 1px;
-    margin-bottom: 30px;
-    color: black;
-}
-
-.main .personal-skills .personal-skills-box .personal-skills-lists .personal-skills-list .list-info-right a {
-    width: 30px;
-    padding: 5px;
-    height: 10px;
-    line-height: 1;
-    border-radius: 15px;
-    background-color: #3478f5;
-    color: white;
-}
-
-.alpha{
-    width:100%;
-    height: 300px;
-}
-
-.alpha .alpha-box{
+.alpha .alpha-box {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.alpha .alpha-box .alpha-font{
+.alpha .alpha-box .alpha-font {
     font-size: 20px;
-    font-family: "PingFang SC","zk";
+    font-family: "PingFang SC", "zk";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-
-.photos {
-    width: 100%;
-    height: 800px;
-    background-color: #f5f5f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.container {
-    position: absolute;
-    width: 35%;
-    height: 35%;
-    margin-bottom: 1rem;
-}
-
-.photos .container .photos-title{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: -25%;
-    left: -65%;
-    font-size: 28px;
-    font-family: "PingFang SC","zk";
-}
-
-.photos .border-photos{
-    display: flex;
-    width: 70%;
-    height: 75%;
-    /* dashed是虚线边框 */
-    border: 20px dashed #ccc;
-    border-radius: 30px;
-    z-index: 5;
-}
-
-.poker,
-.poker_top {
-    position: absolute;
-    width: 20rem;
-    height: 26rem;
-    border: 0.15rem solid #fff;
-    border-radius: 1.5rem;
-    background-color: #17f700;
-    transform-origin: bottom left;
-    overflow: hidden;
-}
-
-.poker img {
-    position: relative;
-    width: 100%;
-}
-
-.poker_top {
-    /* background-color: #fff; */
-    background: url('/images/next.png');
-    background-size: cover;
-    transition: 0.3s ease;
-    cursor: pointer;
-    z-index: 22;
-}
-
-.poker_top:hover {
-    background-color: #aaa;
-}
-
-.poker1 {
-    transform: rotate(-10deg);
-}
-
-.poker2 {
-    transform: rotate(-6deg) translate(35%, -12%);
-}
-
-.poker3 {
-    transform: rotate(-2deg) translate(65%, -19%);
-}
-
-.poker4 {
-    transform: rotate(2deg) translate(95%, -26%);
-}
-
-.poker5 {
-    transform: rotate(11deg) translate(100%, -5%);
-}
-
-/* 7end */
 
 /* 未完待续 */
 .notfinished {
     width: 100%;
-    height: 300px;
-    position: relative;
+    height: 30vh;
+    border-top: 1px solid #ccc;
 }
 
 .notfinished .notfinished-box {
     width: 90%;
     height: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
 }
 
-/* .notfinished .notfinished-box .notfinished-box-left {
-    width: 30%;
-    height: 100%;
+/* 彩色文字效果方法 */
+/* {
+    color: transparent;
+    animation: hue 4s linear infinite;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 128), rgb(0, 255, 255), rgb(0, 128, 255), rgb(0, 0, 255), rgb(128, 0, 255), rgb(255, 0, 255), rgb(255, 0, 128));
+    -webkit-background-clip: text;
+}
+@keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(-360deg);
+    }
 } */
+
+/* 彩色文字效果方法 */
+@keyframes hue {
+    from {
+        filter: hue-rotate(0);
+    }
+
+    to {
+        filter: hue-rotate(-360deg);
+    }
+}
+
+.notfinished .notfinished-box .notfinished-box-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .notfinished .notfinished-box .notfinished-box-left .notfinished-box-left-img {
     width: 100px;
     height: 100px;
     border-radius: 30px;
-    position: absolute;
-    top: 40%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px #0073ffb3;
+    transition: all .5s;
+}
+
+.notfinished .notfinished-box:hover .notfinished-box-left .notfinished-box-left-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    box-shadow: 0 0 40px 5px #0073ffb3;
+    transition: all .5s;
 }
 
 .notfinished .notfinished-box .notfinished-box-right {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+/* color: transparent;
+animation: hue 4s linear infinite;
+background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 128), rgb(0, 255, 255), rgb(0, 128, 255), rgb(0, 0, 255), rgb(128, 0, 255), rgb(255, 0, 255), rgb(255, 0, 128));
+-webkit-background-clip: text; */
 
 .notfinished .notfinished-box .notfinished-box-right .notfinished-box-right-title {
     font-size: 28px;
     font-weight: bold;
-    font-family: "PingFang SC";
     color: black;
     opacity: 0.85;
+    transition: all .5s;
+}
+
+.notfinished .notfinished-box:hover .notfinished-box-right .notfinished-box-right-title {
+    color: transparent;
+    animation: hue 4s linear infinite;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 128), rgb(0, 255, 255), rgb(0, 128, 255), rgb(0, 0, 255), rgb(128, 0, 255), rgb(255, 0, 255), rgb(255, 0, 128));
+    -webkit-background-clip: text;
+    transition: all .5s;
+    font-size: 30px;
 }
 
 .notfinished .notfinished-box .notfinished-box-right p {
     font-size: 14px;
-    font-family: "PingFang SC";
     color: black;
     opacity: 0.85;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-/* 底部角标 */
-/* 8start */
+.notfinished .notfinished-box:hover .notfinished-box-right p {
+    color: transparent;
+    animation: hue 4s linear infinite;
+    background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 128), rgb(0, 255, 255), rgb(0, 128, 255), rgb(0, 0, 255), rgb(128, 0, 255), rgb(255, 0, 255), rgb(255, 0, 128));
+    -webkit-background-clip: text;
+    transition: all .5s;
+    font-size: 16px;
+}
+
 .footer {
     width: 100%;
-    height: 300px;
+    height: 40vh;
     background-color: #eaeaea;
     position: relative;
 }
@@ -1373,13 +1420,22 @@
 
 .footer .footer-box .footer-box-left {
     font-size: 14px;
-    font-family: "PingFang SC";
+
     font-weight: bold;
     color: #00001e;
     opacity: 0.6;
     position: absolute;
     top: 30%;
     left: 5%;
+}
+
+.footer .footer-box .footer-box-left a {
+    transition: all 0.5s;
+}
+
+.footer .footer-box .footer-box-left a:hover {
+    color: red;
+    transition: all 0.5s;
 }
 
 .footer .footer-box .footer-box-right {
@@ -1405,10 +1461,8 @@
     opacity: 0.6;
 }
 
-/* 8end */
-
 /* 侧边栏 */
-.sideBar {
+.sideBar-right {
     width: 178px;
     background: rgba(255, 255, 255, 0.9);
     height: 420px;
@@ -1427,13 +1481,13 @@
 }
 
 /* js变化样式 */
-.sideBar.folding {
+.sideBar-right.folding {
     transform: translate(100%, -50%);
     opacity: 1;
 }
 
 /* 箭头图标 */
-.sideBar .arrow-icon-box {
+.sideBar-right .arrow-icon-box {
     width: 30px;
     height: 52px;
     background: #333;
@@ -1445,8 +1499,8 @@
     cursor: pointer;
 }
 
-.sideBar .arrow-icon-box .arrow-icon {
-    background: url('/images/arrow2.png');
+.sideBar-right .arrow-icon-box .arrow-icon {
+    background: url('/images/arrow2.webp');
     width: 12px;
     height: 18px;
     margin-left: auto;
@@ -1456,16 +1510,16 @@
     transition: all .8s;
 }
 
-.sideBar.folding .arrow-icon-box .arrow-icon {
+.sideBar-right.folding .arrow-icon-box .arrow-icon {
     /* 变形旋转 */
     transform: rotate(-180deg);
 }
 
-.sideBar .content .content-top {
+.sideBar-right .content .content-top {
     text-align: center;
 }
 
-.sideBar .content .content-top .about {
+.sideBar-right .content .content-top .about {
     width: 100%;
     padding-top: 18px;
     padding-bottom: 27px;
@@ -1473,19 +1527,19 @@
     color: #121212;
 }
 
-.sideBar .content .content-top img {
+.sideBar-right .content .content-top img {
     width: 147px;
     height: 147px;
 }
 
-.sideBar .content .content-top .scan-code {
+.sideBar-right .content .content-top .scan-code {
     font-size: 16px;
     opacity: .8;
     padding-top: 10px;
     padding-bottom: 27px;
 }
 
-.sideBar .content .content-bottom .item {
+.sideBar-right .content .content-bottom .item {
     height: 44px;
     line-height: 44px;
     cursor: pointer;
@@ -1493,107 +1547,17 @@
     padding-right: 21px;
 }
 
-.sideBar .content .content-bottom .item:hover {
+.sideBar-right .content .content-bottom .item:hover {
     background: #333333;
     color: #ffd49f;
 }
 
-.sideBar .content .content-bottom .item .iconfont {
+.sideBar-right .content .content-bottom .item .iconfont {
     float: left;
     font-size: 28px;
 }
 
-.sideBar .content .content-bottom .item .text {
+.sideBar-right .content .content-bottom .item .text {
     float: right;
     font-size: 16px;
 }
-
-/* :end */
-
-/* 个人盒子 */
-/* start */
-.personalBox{
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    z-index: 21;
-    cursor: pointer
-}
-
-.personalBox .personalBox-img{
-    width: 100%;
-    height: 100%;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    opacity: 0.5;
-    transition: all 0.5s;
-}
-
-.personalBox:hover .personalBox-img {
-    width: 100%;
-    height: 100%;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    opacity: 1;
-    transition: all 0.5s;
-}
-
-.detail-content {
-    /* 这是固定定位 */
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    /* 给个图层堆叠顺序,这个要最大 */
-    z-index: 20;
-    /* display: none; */
-    opacity: 0;
-    transition: all 1s;
-}
-
-.detail-content .personalBox-info {
-    width: 650px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    /* 设置偏移量 */
-    transform: translate(-50%, -50%);
-}
-
-.detail-content .personalBox-info-close {
-    position: absolute;
-    width: 57px;
-    height: 57px;
-    right: 50%;
-    top: 50%;
-    cursor: pointer;
-    transform: translate(680%,-355%);
-}
-
-/* .personalBox .personalBox-info{
-    width: 60%;
-    height: 40%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 30px;
-    display: none;
-}
-
-.personalBox .personalBox-info-close{
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    top: 25%;
-    left: 80%;
-    cursor: pointer; 
-    display: none;
-} */
-/* end */
-
-/* 1end */

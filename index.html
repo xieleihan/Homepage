@@ -1,9 +1,9 @@
-<!-- Copyright© 2024 By SouthAki All Rights Reserved. -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <title>南秋SouthAki の 个人主页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SouthAki の 个人页面</title>
     <!-- 引入公用样式 -->
@@ -11,93 +11,192 @@
     <!-- 引入业务样式 -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- 引入iconfont样式 -->
-    <link rel="stylesheet" href="/font-icon/iconfont.css">
-    <link rel="icon" type="image/x-icon" href="/images/icon.png">
-    <link rel="apple-touch-icon" href="/images/icon.png">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="icon" type="image/x-icon" href="/images/icon.webp">
+    <link rel="apple-touch-icon" href="/images/icon.webp">
     <meta name="apple-mobile-web-app-title" content="南秋SouthAki">
-    <link rel="bookmark" href="/images/icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/icon.png">
+    <link rel="bookmark" href="/images/icon.webp">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/icon.webp">
     <meta name="description" content="此刻人间骄阳正烈，风吹过长街，献吻梧桐叶。">
 </head>
 
 <body>
+    <!--    侧边导航栏-->
+    <!--start-->
+    <div class="sideBar">
+        <!-- 侧边栏盒子 -->
+        <div class="sideBar-box">
 
-    <!-- 顶部导航栏 -->
-    <!-- start -->
-    <div class="header clean">
-        <!-- 左部分 -->
-        <div class="header-left fl">
-            <!-- 这里更改自己的logo位置 -->
-            <img src="/images/header-logo.jpg" alt="" />
-            <!-- 网站标题 -->
-            <p>南秋SouthAki🍉</p>
-        </div>
-        <!-- 导航栏 -->
-        <div class="nav fl">
-            <ul class="clean">
-                <!-- 导航栏,可以根据自己喜欢的去添加 -->
-                <li><a href="#pages" class="active">项目</a></li>
-                <li><a href="#article">文章</a></li>
-                <li><a href="#personal-skills">技能</a></li>
-            </ul>
-        </div>
-        <!-- 右部分 -->
-        <div class="header-right fr">
-            <!-- 搜索栏 -->
-            <div class="search clean">
-                <form>
-                    <input type="text" placeholder="这是必应" class="searchInput fl" id="myinput"/>
-                    <a href="#" class="searchBtn fr" id="mybtn">搜索</a>
-                </form>
+            <!-- 侧边栏顶部logo -->
+            <div class="sideBar-logo">
+                <a href="#"><img src="./images/header-logo.webp" alt=""></a>
+                <a href="#"><span>南秋SouthAki🍉</span></a>
             </div>
-            <div class="header-blog">博客</div>
-        </div>
-    </div>
-    <!-- end -->
+            <!-- 侧边栏导航栏 -->
 
-    <!-- 页面 -->
-    <!-- start -->
-    <div class="main">
-        <!-- 海报页面部分 -->
-        <div class="poster clean">
-            <!-- 大上部分 -->
-            <div class="poster-top fl">
-                <!-- 左部分 -->
-                <div class="poster-top-left">
-                    <span class="poster-top-title">南秋SouthAki🍉</span>
-                    <br>
-                    <span class="poster-top-title">循此苦旅，以达星辰</span>
-                    <br>
-                    <span class="poster-top-title-small">
-                        <span>世界灿烂盛大，</span>
-                        <br>
-                        <span>欢迎回家。</span>
-                    </span>
-                    <!-- 下面这个最好不改 -->
-                    <div class="poster-top-left-about clean">
-                        <a href="https://southaki.cn/" class="about fl">了解更多</a>
-                        <a href="https://github.com/xieleihan" class="icon fr">
-                            <p class="iconfont icon-github"></p>
-                        </a>
+            <div class="sideBar-nav">
+                <ul>
+                    <a href="#">
+                        <li>项目</li>
+                    </a>
+                    <a href="#">
+                        <li>文章</li>
+                    </a>
+                    <a href="#">
+                        <li>技能</li>
+                    </a>
+                </ul>
+            </div>
+
+            <!-- 侧边栏底部搜索 -->
+            <div class="sideBar-search"><span class="iconfont icon-sousuo" id="search"></span></div>
+            <!-- 侧边栏底部设置 -->
+            <div class="sideBar-setting" id="setting">
+                <span class="iconfont icon-shezhi"></span>
+                <div class="box clearfix" id="settingBox">
+                    <div class="smallprompt fr"></div>
+                    <div class="prompt fl">
+                        <div class="triangle"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- 右部分 -->
-                <div class="poster-top-right">
-                    <img src="/images/poster-mylogo.png" alt="">
+    <div class="main">
+        <!-- 海报墙 -->
+        <div class="poster">
+            <div class="poster-box">
+                <!-- 海报墙顶部 -->
+                <div class="poster-box-top">
+                    <!-- 时间显示 : 精确到北京时间 -->
+                    <div class="poster-box-top-time">
+                        <ul>
+                            <li class="timelist"></li>
+                            <li class="timelist"></li>
+                            <li>:</li>
+                            <li class="timelist"></li>
+                            <li class="timelist"></li>
+                        </ul>
+                    </div>
+                    <!-- 标题栏 : 这不是bug,这是一个特性.在我设备上可以很好的运行 -->
+                    <div class="poster-box-top-title">
+                        <div class="title-box">
+                            <p>这不是bug,这是一个特性.在我设备上可以很好的运行</p>
+                        </div>
+                    </div>
+                    <!-- 一个小动画 -->
+                    <svg class="pl" viewBox="0 0 160 160" width="160px" height="160px"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#000"></stop>
+                                <stop offset="100%" stop-color="#fff"></stop>
+                            </linearGradient>
+                            <mask id="mask1">
+                                <rect x="0" y="0" width="160" height="160" fill="url(#grad)"></rect>
+                            </mask>
+                            <mask id="mask2">
+                                <rect x="28" y="28" width="104" height="104" fill="url(#grad)"></rect>
+                            </mask>
+                        </defs>
+
+                        <g>
+                            <g class="pl__ring-rotate">
+                                <circle class="pl__ring-stroke" cx="80" cy="80" r="72" fill="none"
+                                    stroke="hsl(223,90%,55%)" stroke-width="16" stroke-dasharray="452.39 452.39"
+                                    stroke-dashoffset="452" stroke-linecap="round" transform="rotate(-45,80,80)">
+                                </circle>
+                            </g>
+                        </g>
+                        <g mask="url(#mask1)">
+                            <g class="pl__ring-rotate">
+                                <circle class="pl__ring-stroke" cx="80" cy="80" r="72" fill="none"
+                                    stroke="hsl(193,90%,55%)" stroke-width="16" stroke-dasharray="452.39 452.39"
+                                    stroke-dashoffset="452" stroke-linecap="round" transform="rotate(-45,80,80)">
+                                </circle>
+                            </g>
+                        </g>
+
+                        <g>
+                            <g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round"
+                                transform="translate(80,80)">
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(-135,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(-90,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(-45,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(0,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(45,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(90,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(135,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14"
+                                    transform="rotate(180,0,0) translate(0,40)"></polyline>
+                            </g>
+                        </g>
+                        <g mask="url(#mask1)">
+                            <g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round"
+                                transform="translate(80,80)">
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(-135,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(-90,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(-45,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(0,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(45,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(90,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(135,0,0) translate(0,40)"></polyline>
+                                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14"
+                                    transform="rotate(180,0,0) translate(0,40)"></polyline>
+                            </g>
+                        </g>
+
+                        <g>
+                            <g transform="translate(64,28)">
+                                <g class="pl__arrows" transform="rotate(45,16,52)">
+                                    <path fill="hsl(3,90%,55%)"
+                                        d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z">
+                                    </path>
+                                    <path fill="hsl(223,10%,90%)"
+                                        d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                        <g mask="url(#mask2)">
+                            <g transform="translate(64,28)">
+                                <g class="pl__arrows" transform="rotate(45,16,52)">
+                                    <path fill="hsl(333,90%,55%)"
+                                        d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z">
+                                    </path>
+                                    <path fill="hsl(223,90%,80%)"
+                                        d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
                 </div>
 
-                <!-- 海报页面下部分 -->
-                <div class="poster-bottom fr">
-                    <span>有些时候，过度追求功利，反而会失去更多的东西。保持自己年少的热爱，不断前进，才可到达顶峰。对计算机行业的初心，自小时候到现在，从未动摇。于是，在这个艰难的时代，尘世间熙熙攘攘的人流带给世间多灰尘，行走时，我总会沾染到，但是我拍一拍裤脚，依旧大跨步往前走，身后阳光灿烂。</span>
-                    <br>
-                    <img src="/images/poster-mylogo.png" alt="">
-                    <br>
-                    <span class="poster-bottom-title">南秋SouthAki🍉</span>
-                    <br>
-                    <span class="poster-bottom-title-small">保持好奇心，追逐顶峰，成为自己梦想中的自己。</span>
+                <div class="poster-box-bottom clearfix" id="searchForm">
+                    <form>
+                        <input type="text" id="myinput" placeholder="&nbsp;&nbsp;输入搜索关键词" class="searchInput fl">
+                        <a href="#" class="searchBtn fr" id="mybtn">搜索</a>
+                    </form>
                 </div>
-
+                <!-- 和风天气-2024-02-06-update -->
+                <div id="he-plugin-simple"></div>
+                <!-- end -->
                 <!-- css3的下移 -->
                 <!-- start -->
                 <div class="down-type fr">
@@ -107,34 +206,78 @@
                 </div>
                 <!-- end -->
             </div>
-            <div class="poster-name">这不是bug,这是一个特性.在我的设备上可以很好运行</div>
         </div>
 
-        <!-- 个人页面 -->
-        <!-- start -->
-        <div class="pages" id="pages">
-            <div class="pages-info">
-                <span class="pages-tips">小宇宙</span>
-                <br>
-                <span class="pages-title">生活虽然苦涩，<br>但眼里依旧有光。</span>
-                <div class="pages-about">
-                    <span class="pages-about-info">我把毕生所学的知识放在个人博客,<br>为了后来人能更好探索这个世界.</span>
+        <!-- 个人主页 -->
+        <div class="homepage">
+            <div class="homepage-box">
+                <div class="homepage-box-top clearfix">
+                    <div class="homepage-box-top-left fl">
+                        <span class="title">南秋SouthAki🍉</span>
+                        <br>
+                        <span class="info">循此苦旅,以达星辰</span>
+                        <br>
+                        <span class="smallinfo">
+                            <span>世界灿烂盛大,</span>
+                            <br>
+                            <span>欢迎回家</span>
+                        </span>
+                        <br>
+                        <div class="homepage-about clearfix">
+                            <a href="https://southaki.cn/" class="about fl">了解更多</a>
+                            <a href="https://github.com/xieleihan" class="icon fl">
+                                <p class="iconfont icon-github"></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="homepage-box-top-right fr">
+                        <img src="./images/poster-mylogo.webp" alt="">
+                    </div>
                 </div>
-                <div class="pages-link">
-                    <a href="https://blog.southaki.top/" class="pages-buttom">访问项目</a>
-                    <a href="https://southaki.cn/" class="second-link">2023.07.22 建站</a>
+                <div class="homepage-box-bottom">
+                    <div class="homepage-box-bottom-title">
+                        有些时候，过度追求功利，反而会失去更多的东西。保持自己年少的热爱，不断前进，才可到达顶峰。对计算机行业的初心，自小时候到现在，从未动摇。于是，在这个艰难的时代，尘世间熙熙攘攘的人流带给世间多灰尘，行走时，我总会沾染到，但是我拍一拍裤脚，依旧大跨步往前走，身后阳光灿烂。
+                    </div>
+                    <div class="homepage-box-bottom-img">
+                        <img src="./images/poster-mylogo.webp" alt="">
+                    </div>
+                    <div class="sign">南秋SouthAki🍉</div>
+                    <div class="homepage-box-bottom-info">保持好奇心，追逐顶峰，成为自己梦想中的自己。</div>
                 </div>
-            </div>
-            <div class="pages-pic">
-                <img src="/images/pages-pic-img.png" alt="" class="pages-pic-img">
             </div>
         </div>
+
+        <!-- 项目页面 -->
+        <div class="project">
+            <div class="project-box">
+                <div class="project-top">
+                    <span class="tips">小宇宙</span>
+                    <br>
+                    <span class="project-title">生活虽然苦涩<br>但眼里依旧有光.</span>
+                    <div class="project-about">
+                        <span class="project-about-info">我把毕生所学的知识放在个人博客,
+                            <br>
+                            为了后来人能更好探索这个世界.
+                        </span>
+                    </div>
+                    <div class="project-link">
+                        <a href="#" class="project-buttom">访问项目</a>
+                        <a href="#" class="second-link">2023.07.22 建站</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-pic">
+                <img src="./images/pages-pic-img.webp" alt="">
+            </div>
+        </div>
+
+        <!-- 个人页面展示 -->
         <!-- 个人页面简化版 -->
         <div class="simplifypages">
             <div class="simplifypages-title">个人页面</div>
             <div class="simplifypages-info">热爱终抵岁月漫长</div>
             <div class="simplifypages-content clean">
-                <img src="/images/poster-mylogo.png" alt="" class="simplifypages-content-img fl" />
+                <img src="/images/poster-mylogo.webp" alt="" class="simplifypages-content-img fl" />
                 <div class="simplifypages-content-right fr">
                     <div class="simplifypages-word">南秋SouthAki🍉</div>
                     <div class="simplifypsges-word-redword">热门</div>
@@ -144,10 +287,8 @@
                 </div>
             </div>
         </div>
-        <!-- end -->
 
-        <!-- 个人文章 -->
-        <!-- start -->
+        <!-- 文章页面 -->
         <div class="article" id="article">
             <div class="article-info">
                 <span class="article-tips">繁星</span>
@@ -164,155 +305,123 @@
                 <img src="/images/banner-skill.webp" alt="" class="article-pic-img">
             </div>
         </div>
+
         <!-- 个人文章简化版 -->
         <div class="simplifyarticle">
-            <div class="simplifyarticle-title">个人文章</div>
-            <div class="simplifyarticle-info">指路，星光不问赶路人，岁月不负有心人，前路漫漫亦灿灿</div>
-            <div class="simplifyarticle-content clean">
-                <img src="/images/article.png" alt="" class="simplifyarticle-content-img fl" />
-                <div class="simplifyarticle-content-right fr">
-                    <div class="simplifyarticle-word">外币卡申请</div>
-                    <div class="simplifyarticle-word-redword">热门</div>
-                    <p>一卡在手,通行全球</p>
-                    <a href="" class="simplifyarticle-link">访问</a>
-                    <a href="" class="simplifyarticle-link-2">有用的知识</a>
-                </div>
-            </div>
-            <div class="simplifyarticle-content clean">
-                <img src="/images/article.png" alt="" class="simplifyarticle-content-img fl" />
-                <div class="simplifyarticle-content-right fr">
-                    <div class="simplifyarticle-word two">Cloudflare建网站</div>
-                    <div class="simplifyarticle-word-redword">省钱</div>
-                    <p>薅羊毛的乐趣</p>
-                    <a href="" class="simplifyarticle-link">访问</a>
-                    <a href="" class="simplifyarticle-link-2">省钱的知识</a>
+            <div class="simplifyarticle-box">
+                <div class="simplifyarticle-title">个人文章</div>
+                <div class="simplifyarticle-info">指路，星光不问赶路人，岁月不负有心人，前路漫漫亦灿灿</div>
+                <div class="simplifyarticle-box-bottom">
+
+                    <div class="simplifyarticle-content clean">
+                        <img src="/images/article.webp" alt="" class="simplifyarticle-content-img fl" />
+                        <div class="simplifyarticle-content-right fr">
+                            <div class="simplifyarticle-word">外币卡申请</div>
+                            <div class="simplifyarticle-word-redword">热门</div>
+                            <p>一卡在手,通行全球</p>
+                            <a href="" class="simplifyarticle-link">访问</a>
+                            <a href="" class="simplifyarticle-link-2">有用的知识</a>
+                        </div>
+                    </div>
+                    <div class="simplifyarticle-content clean">
+                        <img src="/images/article.webp" alt="" class="simplifyarticle-content-img fl" />
+                        <div class="simplifyarticle-content-right fr">
+                            <div class="simplifyarticle-word two">Cloudflare建网站</div>
+                            <div class="simplifyarticle-word-redword">省钱</div>
+                            <p>薅羊毛的乐趣</p>
+                            <a href="" class="simplifyarticle-link">访问</a>
+                            <a href="" class="simplifyarticle-link-2">省钱的知识</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- end -->
 
         <!-- 个人技能 -->
-        <!-- start -->
-        <div class="personal-skills" id="personal-skills">
+        <div class="personal-skills">
             <div class="personal-skills-box">
                 <div class="personal-skills-title">技能</div>
                 <div class="personal-skills-info">无限进步,永远少年</div>
-                <ul class="personal-skills-lists clean">
-                    <li class="personal-skills-list personal-skills-list-1 fl">
-                        <p class="name">这不是bug,这是一个特性.在我的设备上可以很好运行</p>
-                        <div class="list-info clean">
-                            <div class="list-info-left fl">
-                                <img src="/images/秒表.png" alt="">
+                <ul class="personal-skills-lists">
+                    <li class="personal-skills-list">
+                        <div class="list-info clearfix">
+                            <div class="list-info-left">
+                                <img src="./images/秒表.webp" alt="">
                             </div>
-                            <div class="list-info-right fr">
-                                <span class="list-info-right-title">计时器</span>
+                            <div class="list-info-right">
+                                <span>计时器</span>
                                 <p>简单的正计时页面</p>
-                                <a href="">访问</a>
+                                <a href="#">访问</a>
                             </div>
                         </div>
-                        <img src="/images/hello.jpg" alt="" class="hello-img">
+                        <img src="./images/hello.webp" alt="" class="hello-img">
                         <div class="list-mask"></div>
                     </li>
-                    <li class="personal-skills-list personal-skills-list-2 fl">
-                        <p class="name">这不是bug,这是一个特性.在我的设备上可以很好运行</p>
-                        <div class="list-info clean">
-                            <div class="list-info-left fl">
-                                <img src="/images/地球.png" alt="">
+                    <li class="personal-skills-list personal-skills-list-1">
+                        <div class="list-info clearfix">
+                            <div class="list-info-left">
+                                <img src="./images/地球.webp" alt="">
                             </div>
-                            <div class="list-info-right fr">
-                                <span class="list-info-right-title">导航页</span>
+                            <div class="list-info-right">
+                                <span>导航页</span>
                                 <p>简单的导航页面</p>
-                                <a href="">访问</a>
+                                <a href="#">访问</a>
                             </div>
                         </div>
-                        <img src="/images/hello.jpg" alt="" class="hello-img">
+                        <img src="./images/hello.webp" alt="" class="hello-img">
                         <div class="list-mask"></div>
                     </li>
-                    <li class="personal-skills-list personal-skills-list-3 fl">
-                        <p class="name">这不是bug,这是一个特性.在我的设备上可以很好运行</p>
-                        <div class="list-info clean">
-                            <div class="list-info-left fl">
-                                <img src="/images/Game.ico" alt="">
+                    <li class="personal-skills-list personal-skills-list-2">
+                        <div class="list-info clearfix">
+                            <div class="list-info-left">
+                                <img src="./images/Game.ico" alt="">
                             </div>
-                            <div class="list-info-right fr">
-                                <span class="list-info-right-title">打地鼠</span>
+                            <div class="list-info-right">
+                                <span>打地鼠</span>
                                 <p>简单的小游戏</p>
-                                <a href="">访问</a>
+                                <a href="#">访问</a>
                             </div>
                         </div>
-                        <img src="/images/hello.jpg" alt="" class="hello-img">
+                        <img src="./images/hello.webp" alt="" class="hello-img">
                         <div class="list-mask"></div>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <!-- 下面是新功能开发区,回到首页 -->
+        <div class="alpha" id="alphaReturntop">
+            <div class="alpha-box">
+                <div class="alpha-font">下面是新页面的建造,有些问题不可知,点击我回到顶部😊</div>
+            </div>
+        </div>
+
+        <!-- 未完待续 -->
+        <!-- start -->
+        <div class="notfinished">
+            <div class="notfinished-box clean">
+                <div class="notfinished-box-left fl">
+                    <img src="/images/poster-mylogo.webp" alt="" class="notfinished-box-left-img">
+                </div>
+                <div class="notfinished-box-right fr">
+                    <div class="notfinished-box-right-title">未完待续</div>
+                    <p>我是一个全栈开发者,但不常写代码</p>
+                </div>
+            </div>
+        </div>
         <!-- end -->
-    </div>
-    <!-- end -->
 
-    <!-- 下面是新功能开发区,回到首页 -->
-    <div class="alpha" id="alphaReturntop">
-        <div class="alpha-box">
-            <div class="alpha-font">下面是新页面的建造,有些问题不可知,点击我回到顶部😊</div>
-        </div>
-    </div>
 
-    <!-- 相册 -->
-    <!-- start -->
-    <div class="photos">
-        <div class="border-photos"></div>
-        <div class="container">
-            <div class="photos-title">相册</div>
-            <div class="poker poker1">
-                <img src="/images/photo-pocket-1.webp" />
-            </div>
-            <div class="poker poker2">
-                <img src="/images/photo-pocket-2.webp" />
-            </div>
-            <div class="poker poker3">
-                <img src="/images/photo-pocket-3.webp" />
-            </div>
-            <div class="poker poker4">
-                <img src="/images/photo-pocket-4.webp" />
-            </div>
-            <div class="poker poker5">
-                <img src="/images/photo-pocket-5.webp" />
-            </div>
-            <!-- 下面暂时不加入 -->
-            <!-- <div class="poker poker6">
-                <img src="/images/photo-pocket-6.webp" />
-            </div>
-            <div class="poker poker7">
-                <img src="/images/photo-pocket-7.webp" />
-            </div>
-            <div class="poker poker8">
-                <img src="/images/photo-pocket-8.webp" />
-            </div>
-            <div class="poker poker9">
-                <img src="/images/photo-pocket-2.webp" />
-            </div>
-            <div class="poker poker10">
-                <img src="/images/photo-pocket-4.webp" /> -->
-            </div>
-            <div class="poker_top poker5" onclick="poker.move()"></div>
-        </div>
-    </div>
-    <!-- end -->
-
-    <!-- 未完待续 -->
-    <!-- start -->
-    <div class="notfinished">
-        <div class="notfinished-box clean">
-            <div class="notfinished-box-left fl">
-                <img src="/images/poster-mylogo.png" alt="" class="notfinished-box-left-img">
-            </div>
-            <div class="notfinished-box-right fr">
-                <div class="notfinished-box-right-title">未完待续</div>
-                <p>我是一个全栈开发者,但不常写代码</p>
+        <!-- 右下角的个人卡片 -->
+        <div class="personalInformationButton">
+            <img src="./images/hello.webp" alt="">
+            <div class="returnTop" id="returnTop">
+                <span class="iconfont icon-zhiding"></span>
             </div>
         </div>
     </div>
-    <!-- end -->
+    <!--end-->
 
     <!-- 脚栏 -->
     <div class="footer">
@@ -320,6 +429,7 @@
             <div class="footer-box-left fl">
                 <a href="">萌ICP备20231229号</a>
                 <p>Copyright© 2024 By SouthAki All Rights Reserved.</p>
+                <p id="RunTime" class="info""></p>
             </div>
             <div class="footer-box-right fr">
                 一个人一生只会经历一个夏天,剩下的都是和它做比较.
@@ -330,7 +440,7 @@
 
     <!-- 侧边栏 -->
     <!-- start -->
-    <div class="sideBar">
+    <div class="sideBar-right">
         <!-- 箭头盒子 -->
         <div class="arrow-icon-box">
             <div class="arrow-icon">
@@ -341,7 +451,7 @@
             <!-- 上部分 -->
             <div class="content-top">
                 <p class="about">关注我</p>
-                <img src="/images/myqrcode.png" alt="" />
+                <img src="/images/myqrcode.webp" alt="" />
                 <p class="scan-code">扫码关注微信</p>
             </div>
             <!-- 下部分 -->
@@ -351,7 +461,7 @@
                     <span class="text">QQ</span>
                 </div>
                 <div class="item clean" onclick="executeTwSwal()">
-                    <span class="iconfont icon-tuite"></span>
+                    <span class="iconfont icon-twitter-fill"></span>
                     <span class="text">Twitter</span>
                 </div>
                 <div class="item clean" onclick="executeBilibiliSwal()">
@@ -362,20 +472,43 @@
         </div>
     </div>
     <!-- end -->
-
-    <!-- 个人盒子 -->
-    <div class="personalBox">
-        <img src="/images/hello.jpg" alt="" class="personalBox-img">
-    </div>
-    <div class="detail-content">
-        <img src="/images/personalBox-info.jpg" alt="" class="personalBox-info" />
-        <img src="/images/close.png" alt="" class="personalBox-info-close">
-    </div>
-    
-
 </body>
-<script src="/js/main.js"></script>
-<script src="/js/sweetalert.min.js"></script>
+
+<!-- 主js -->
+<script src="./js/main.js"></script>
+<!-- jquery -->
 <script src="/js/jquery-3.7.1.min.js"></script>
+<!-- 和风天气api的js -->
+<!-- --start-- -->
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+<script>
+    WIDGET = {
+        "CONFIG": {
+            "modules": "21034",
+            "background": "1",
+            "tmpColor": "FFFFFF",
+            "tmpSize": "16",
+            "cityColor": "FFFFFF",
+            "citySize": "16",
+            "aqiColor": "FFFFFF",
+            "aqiSize": "16",
+            "weatherIconSize": "24",
+            "alertIconSize": "18",
+            "padding": "10px 10px 10px 10px",
+            "shadow": "0",
+            "language": "auto",
+            "borderRadius": "20",
+            "fixed": "true",
+            "vertical": "top",
+            "horizontal": "left",
+            "right": "10",
+            "top": "8",
+            "key": "2f57e2980011449d806e93ad7739d181"
+        }
+    }
+</script>
+<!-- end -->
+<!-- swal弹窗 -->
+<script src="./js/sweetalert.min.js"></script>
 
 </html>

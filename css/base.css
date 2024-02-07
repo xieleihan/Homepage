@@ -1,15 +1,26 @@
-/* 初始化样式，通用样式 */
-/* start */
-/* 去掉页面所有标签的内填充外边距 */
+/*公用样式表*/
 * {
-    /* 定义元素边框与元素内容之间的空间，即上下左右的内边距 */
     padding: 0;
     margin: 0;
-    /* css3新增样式 */
     box-sizing: border-box;
 }
 
-/* 去掉列表符号 */
+/* 清除浮动与浮动配置 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 去掉li的默认样式 */
 li {
     list-style: none;
 }
@@ -19,32 +30,20 @@ img {
     vertical-align: bottom;
 }
 
-/* 类是可以被定义的，比如，我们可以定义一个浮动类，这样，我们就可以在任意位置使用这个类了。 */
-.fl {
-    float: left;
+/* 去掉超链接的底部下划线 */
+a {
+    text-decoration: none;
+    /* 继承父类的相关样式 */
+    color: inherit;
 }
 
-.fr {
-    float: right;
-}
-
-/* ::after (:after) CSS伪元素 ::after 用来创建一个伪元素，作为已选中元素的最后一个子元素。 
-通常会配合 content 属性来为该元素添加装饰内容。 这个虚拟元素默认是行内元素 */
-.clear::after {
-    clear: both;
-    display: block;
-    content: "";
-}
-
-/* 设置整个页面整个字体相关样式 */
+/* 设置整体页面的字体相关样式 */
 body {
     font-size: 14px;
-    font-family: "PingFang SC","zk", "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
-    /* 设置行高为1.5倍 */
+    font-family: "PingFang SC", "zk", "HarmonyOS_Sans";
     line-height: 1.5;
-    /* 设置页面最小宽度 */
     min-width: 1280px;
-    
+
     /* 从css禁用用户选择文字 */
     /* start */
     -moz-user-select: none;
@@ -62,25 +61,17 @@ body {
     /* end */
 }
 
-/* 超链接的美化 */
-a {
-    /* 去掉超链接下划线 */
-    text-decoration: none;
-    /* 设置a标签的字体颜色继承父类元素 */
-    /* inherit就是继承父类 */
-    color: inherit;
+@font-face {
+    font-family: "zk";
+    src: url('../font-family/zk.ttf');
 }
 
 @font-face {
-    font-family: 'zk';
-    /* 自定义字体名称 */
-    src: url('/font-family/zk.ttf') format('truetype');
+    font-family: "timefont";
+    src: url('../font-family/DS-DIGI.TTF');
 }
 
-
-/* html5特性 实现滑动的平滑滚动 */
+/* html5平滑滚动 */
 html {
     scroll-behavior: smooth;
 }
-
-/* end */
