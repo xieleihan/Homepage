@@ -5,7 +5,7 @@
     height: 100vh;
     /* unsplash官方api壁纸源: https://source.unsplash.com/random
     微软每日精选api(随机json): https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-cn  与 url(https: //bingw.jasonzeng.dev/?index=random) */
-    background: url('https://bingw.jasonzeng.dev/?index=random');
+    background: url('https: //source.unsplash.com/random');
     /* background: url('/images/poster-bg.webp'); */
     background-size: cover;
     background-repeat: no-repeat;
