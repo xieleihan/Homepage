@@ -55,13 +55,13 @@ document.oncopy = function () { return false; };
 // 禁止剪切
 document.oncut = function () { return false; };
 // 阻止F12
-window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
-    // 判断是否按下F12，F12键码为123
-    if (event.keyCode = 123) {
-        event.preventDefault() // 阻止默认事件行为
-        window.event.returnValue = false
-    }
-}
+// window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+//     // 判断是否按下F12，F12键码为123
+//     if (event.keyCode = 123) {
+//         event.preventDefault() // 阻止默认事件行为
+//         window.event.returnValue = false
+//     }
+// }
 
 // --------------------
 
@@ -103,36 +103,6 @@ else {
 }
 // end
 
-// 顶部导航栏的搜索框
-// start
-var myinput = document.querySelector("#myinput");
-var mybtn = document.querySelector("#mybtn");
-
-// 添加事件监听器, 当输入发生的时候触发
-myinput.addEventListener("input", function () {
-    var myinputValue = myinput.value;
-    mybtn.href = "https://www.bing.com/search?q=" + myinputValue;
-})
-
-var search = document.querySelector("#search");
-var searchForm = document.querySelector("#searchForm");
-var searchcount = 0
-// console.log(searchForm);
-// console.log(search);
-// 点击事件
-search.onclick = function () {
-    // searchForm.style.visibility = "visible";
-    if (searchcount == 0) {
-        searchForm.style.display = "block";
-        searchcount = 1;
-    }
-    else {
-        searchForm.style.display = "none";
-        searchcount = 0;
-    }
-}
-// end
-
 // 设置框弹出
 // start
 var setting = document.getElementById("setting");
@@ -140,10 +110,22 @@ var settingBox = document.getElementById("settingBox");
 // console.log(setting);
 // console.log(settingBox);
 setting.onmouseover = function () {
-    settingBox.style.display = "block";
+    // settingBox.style.display = "block";
+    settingBox.style.visibility = "visible";
+    settingBox.style.opacity = "1";
 }
 setting.onmouseout = function () {
-    settingBox.style.display = "none";
+    // settingBox.style.display = "none";
+    settingBox.style.visibility = "hidden";
+    settingBox.style.opacity = "0";
+}
+settingBox.onmouseover = function () {
+    settingBox.style.visibility = "visible";
+    settingBox.style.opacity = "1";
+}
+settingBox.onmouseout = function () {
+    settingBox.style.visibility = "hidden";
+    settingBox.style.opacity = "0";
 }
 // end
 
@@ -240,3 +222,4 @@ alphaReturntop.onclick = function () {
 returnTop.onclick = function () {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
+

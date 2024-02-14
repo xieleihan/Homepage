@@ -64,7 +64,7 @@
 
 .sideBar .sideBar-box .sideBar-nav ul li:hover {
     background-color: #5f85ff;
-    color: white;
+    color: black;
     /* border: 3px solid white; */
     outline: 3px solid white;
 }
@@ -93,12 +93,16 @@
     transform: translateX(-50%);
     width: 25px;
     height: 25px;
+
 }
 
 .sideBar .sideBar-box .sideBar-setting span {
     /* color: black; */
     font-size: 18px;
     font-family: "PingFang SC", "zk";
+    display: block;
+    width: 25px;
+    height: 27px;
 }
 
 .sideBar .sideBar-box .sideBar-setting .box {
@@ -108,7 +112,13 @@
     position: absolute;
     left: 20px;
     bottom: -20px;
-    display: none;
+    /* display: none; */
+    /* 效果的弹出渐变 :一共三步,缺一不可
+        需要注意的是:visibility: hidden;是将元素隐藏,但是依旧占用文档流.如果使用colapse元素一样隐藏,但是不占用文档流
+    */
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s linear;
 }
 
 .sideBar .sideBar-box .sideBar-setting .box .smallprompt {
@@ -119,7 +129,7 @@
     height: 200px;
     background: hsla(0, 0%, 100%, 0.7);
     backdrop-filter: blur(6px);
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .sideBar .sideBar-box .sideBar-setting .box .prompt {
@@ -130,23 +140,22 @@
 
 .sideBar .sideBar-box .sideBar-setting .box .prompt .triangle {
     position: absolute;
-    bottom: 10px;
-    left: -16px;
+    bottom: 20px;
+    left: 4px;
     height: 0px;
     width: 0px;
-    border: 20px;
+    border: 10px;
     border-color: transparent #ffffffb3 transparent transparent;
     border-style: solid;
-
 }
 
 /* end */
 
 /* 主盒子 */
 .main .poster {
-    width: 100vw;
+    width: 100%;
     min-width: 100vw;
-    max-width: 100vw;
+    max-width: 100%;
     height: 100vh;
 }
 
@@ -278,29 +287,6 @@
 
 .main .poster .poster-box .poster-box-top .poster-box-top-time ul li:last-child {
     margin-right: 0;
-}
-
-.main .poster .poster-box .poster-box-bottom {
-    width: 45vw;
-    height: 40px;
-    /* visibility: hidden; */
-    display: none;
-}
-
-.main .poster .poster-box .poster-box-bottom .searchInput {
-    width: 90%;
-    height: 40px;
-    border-radius: 30px 0 0 30px;
-}
-
-.main .poster .poster-box .poster-box-bottom .searchBtn {
-    width: 10%;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    background-color: #5f85ff;
-    color: white;
-    border-radius: 0 30px 30px 0;
 }
 
 /* 个人信息按钮 */
@@ -513,7 +499,7 @@
 
 /* 个人信息区域 */
 .main .homepage {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     min-height: 700px;
 }
@@ -669,6 +655,23 @@
     height: 60px;
     border-radius: 50%;
     border: 4px solid #fff;
+    transition: all 1s;
+    transition: box-shadow 5s;
+    box-shadow: 0 0 20px 5px #0073ffb3;
+}
+
+.main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-img:hover img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    transition: all 1s;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    border: 4px solid #ccc;
+    box-shadow: 0 0 40px 5px #0073ffb3;
+    transition: box-shadow 5s;
+    -webkit-transition: -webkit-transform 1s linear;
 }
 
 .main .homepage .homepage-box .homepage-box-bottom .homepage-box-bottom-info {
@@ -677,7 +680,7 @@
 }
 
 .main .project {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     min-height: 800px;
     display: flex;
@@ -1097,7 +1100,7 @@
 
 /* 个人技能页面 */
 .main .personal-skills {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     min-height: 800px;
     background: url('/images/personal-skills-bg.webp');
@@ -1271,6 +1274,7 @@
     height: 10vh;
     background: white;
     background-attachment: fixed;
+    cursor: pointer;
 }
 
 .alpha .alpha-box {

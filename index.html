@@ -36,23 +36,30 @@
 
             <div class="sideBar-nav">
                 <ul>
-                    <a href="#">
+                    <a href="#project">
                         <li>项目</li>
                     </a>
-                    <a href="#">
+                    <a href="#article">
                         <li>文章</li>
                     </a>
-                    <a href="#">
+                    <a href="#personal-skills">
                         <li>技能</li>
                     </a>
                 </ul>
             </div>
 
             <!-- 侧边栏底部搜索 -->
-            <div class="sideBar-search"><span class="iconfont icon-sousuo" id="search"></span></div>
+            <div class="sideBar-search">
+                <a href="#" onclick="return goToSearch()">
+                    <span class="iconfont icon-sousuo" id="search"></span>
+                </a>
+            </div>
+
             <!-- 侧边栏底部设置 -->
-            <div class="sideBar-setting" id="setting">
-                <span class="iconfont icon-shezhi"></span>
+            <div class="sideBar-setting">
+                <div id="setting" class="settingTop">
+                    <span class="iconfont icon-shezhi"></span>
+                </div>
                 <div class="box clearfix" id="settingBox">
                     <div class="smallprompt fr"></div>
                     <div class="prompt fl">
@@ -188,12 +195,6 @@
                     </svg>
                 </div>
 
-                <div class="poster-box-bottom clearfix" id="searchForm">
-                    <form>
-                        <input type="text" id="myinput" placeholder="&nbsp;&nbsp;输入搜索关键词" class="searchInput fl">
-                        <a href="#" class="searchBtn fr" id="mybtn">搜索</a>
-                    </form>
-                </div>
                 <!-- 和风天气-2024-02-06-update -->
                 <div id="he-plugin-simple"></div>
                 <!-- end -->
@@ -248,7 +249,7 @@
         </div>
 
         <!-- 项目页面 -->
-        <div class="project">
+        <div class="project" id="project">
             <div class="project-box">
                 <div class="project-top">
                     <span class="tips">小宇宙</span>
@@ -339,7 +340,7 @@
         <!-- end -->
 
         <!-- 个人技能 -->
-        <div class="personal-skills">
+        <div class="personal-skills" id="personal-skills">
             <div class="personal-skills-box">
                 <div class="personal-skills-title">技能</div>
                 <div class="personal-skills-info">无限进步,永远少年</div>
@@ -429,7 +430,7 @@
             <div class="footer-box-left fl">
                 <a href="">萌ICP备20231229号</a>
                 <p>Copyright© 2024 By SouthAki All Rights Reserved.</p>
-                <p id="RunTime" class="info""></p>
+                <p id="RunTime" class="info"></p>
             </div>
             <div class="footer-box-right fr">
                 一个人一生只会经历一个夏天,剩下的都是和它做比较.
@@ -446,7 +447,7 @@
             <div class="arrow-icon">
             </div>
         </div>
-    
+
         <div class="content">
             <!-- 上部分 -->
             <div class="content-top">
@@ -471,6 +472,10 @@
             </div>
         </div>
     </div>
+    <!-- end -->
+
+    <!-- 个人语录 -->
+    <!-- start -->
     <!-- end -->
 </body>
 
@@ -510,5 +515,25 @@
 <!-- end -->
 <!-- swal弹窗 -->
 <script src="./js/sweetalert.min.js"></script>
+
+<script>
+    function goToSearch() {
+            // 创建一个新的 iframe 元素用于加载 loading 页面
+            var iframe = document.createElement('iframe');
+            iframe.src = 'loading.html'; // 这里指定了 loading.html 的路径
+            document.body.appendChild(iframe);
+
+            // 当 iframe 加载完成后执行的函数
+            iframe.onload = function () {
+                // 等待2秒钟后跳转到 search 页面
+                setTimeout(function () {
+                    window.location.href = 'search.html';
+                }, 2000); // 这里模拟了一个 2 秒的 loading 时间
+            };
+
+            // 阻止超链接默认行为
+            return false;
+        }
+</script>
 
 </html>
