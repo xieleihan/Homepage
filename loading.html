@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/Loading.css">
     <link rel="stylesheet" href="./css/base.css">
 </head>
+
 <body>
     <div id="wifi-loader">
         <svg class="circle-outer" viewBox="0 0 86 86">
@@ -25,4 +27,24 @@
         <div class="text" data-text="Loading"></div>
     </div>
 </body>
+
+<script>
+    window.onload = function () {
+        // 当页面加载完成后执行的函数
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'search.html';
+
+        iframe.onload = function () {
+            // 当search.html加载完成后执行的函数
+            setTimeout(function () {
+                window.location.href = 'search.html'; // 重定向到search.html页面
+            }, 2000); // 等待2秒后执行重定向
+        };
+
+        document.body.appendChild(iframe);
+        return false;
+    }
+</script>
+
 </html>

@@ -66,8 +66,47 @@ document.oncut = function () { return false; };
 // --------------------
 
 // 业务逻辑
-var nowDate = new Date();
-console.log(nowDate);
+// 打印页面相关信息（代码更新时间）
+let date = new Date();
+let a = 'background: #606060; color: #fff; border-radius: 3px 0 0 3px;'
+let b = 'background: #1475B2; color: #fff; border-radius: 0 3px 3px 0;'
+console.log(`%c Now Time : %c ${date} `, a, b);
+/* 样式代码 */
+var styleTitle1 = `
+font-size: 20px;
+font-weight: 600;
+color: rgb(244,167,89);
+`
+var styleTitle2 = `
+font-style: oblique;
+font-size:14px;
+color: rgb(244,167,89);
+font-weight: 400;
+`
+var styleContent = `
+color: rgb(30,152,255);
+`
+
+/* 内容代码 */
+var title1 = '🗺️🧭 南秋SouthAki '
+var title2 = '一个全栈开发者的个人主页'
+
+// => 读取配置型（在配置文件里配置这些会变动的网址）
+var offiUrl = 'https://southaki.top'
+var content = `
+版 本 号：2.0.0    【南秋SouthAki】
+编译日期：2024-02-10 19:39:39 
+版权声明：
+Copyright© 2024 By SouthAki All Rights Reserved.
+该项目已经选择开源,遵守GPL开源协议
+项目可在Github上下载到源码,除商用外,准许任何形式的使用.
+让我们拥抱开源的星辰大海  -- SouthAki
+ 
+🏠官网:  ${offiUrl}
+`
+console.log(`%c${title1} %c${title2}
+%c${content}`, styleTitle1, styleTitle2, styleContent)
+
 var truecount = 0;
 // 时间函数
 // start
@@ -223,3 +262,55 @@ returnTop.onclick = function () {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 
+// 点击右下角个人图片
+// start
+var personalInformationButtonImg = document.querySelector("#personalInformationButtonImg");
+// console.log(personalInformationButtonImg);
+var personalQuotes = document.querySelector("#personalQuotes");
+// console.log(personalQuotes);
+var mask = document.querySelector("#mask");
+// console.log(mask);
+var close = document.querySelector("#close");
+// console.log(close);
+
+personalInformationButtonImg.onclick = function () {
+    mask.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    personalQuotes.style.visibility = "visible";
+    personalQuotes.style.opacity = "1";
+    mask.style.visibility = "visible";
+    mask.style.opacity = "1";
+    document.body.style.overflow = 'hidden'
+}
+
+close.onclick = function () {
+    mask.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    personalQuotes.style.visibility = "hidden";
+    personalQuotes.style.opacity = "0";
+    mask.style.visibility = "hidden";
+    mask.style.opacity = "0";
+    document.body.style.overflow = 'visible'
+}
+
+// end
+
+let network = 'background: #606060; color: #fff; border-radius: 3px 0 0 3px;'
+let network2 = 'background: orange; color: #fff; border-radius: 0 3px 3px 0;'
+console.log(`%c 网盾星球 : %c 提供高防CDN服务 `, network, network2);
+
+var nightMode = document.querySelector("#nightMode");
+var mask = document.querySelector("#mask");
+// console.log(nightMode);
+nightMode.onclick = function () {
+    if (nightMode.checked) {
+        mask.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        mask.style.zIndex = 10000;
+        mask.style.visibility = "visible";
+        mask.style.opacity = "1";
+    }
+    else {
+        mask.style.backgroundColor = "rgba(0, 0, 0, 0)";
+        mask.style.zIndex = 0;
+        mask.style.visibility = "hidden";
+        mask.style.opacity = "0";
+    }
+}

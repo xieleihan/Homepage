@@ -142,7 +142,11 @@
     backdrop-filter: blur(6px);
     border-radius: 10px;
     width: 100%;
-    min-width: 736px;
+    /* min-width: 736px;
+    max-width: 736px; */
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .search .search-box .search-box-centent .bottom ul {
@@ -150,12 +154,13 @@
     height: 130px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px;
+    margin: 0 auto;
 }
 
 .search .search-box .search-box-centent .bottom ul li {
-    width: 100px;
+    width: 6vw;
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -163,6 +168,11 @@
     backdrop-filter: blur(6px);
     color: white;
     border-radius: 5px;
+    margin-right: 4px;
+    /* 文字溢出隐藏 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .search .search-box .search-box-centent .bottom ul li:hover {
@@ -244,6 +254,7 @@
     position: absolute;
     top: -30px;
     right: -50px;
+    cursor: pointer;
 }
 
 .about .close img{
