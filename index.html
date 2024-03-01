@@ -417,6 +417,103 @@
             </div>
         </div>
 
+        <!-- 小工具 -->
+        <div class="personal-tools">
+            <div class="personal-tools-box">
+                <div class="personal-tools-title">小工具</div>
+                <!-- 个人小工具的导航条 -->
+                <div class="personal-tools-nav clearfix">
+                    <ul>
+                        <li class="fl" id="personalToolsLi">计算器</li>
+                        <li class="fl" id="IPpersonalToolsLi">IP地址展示</li>
+                        <li class="fl" id="personalToolsLi">浏览器内核</li>
+                        <li class="fl" id="AlphaPersonalToolsLi">暂未开发</li>
+                    </ul>
+                </div>
+
+                <!-- 功能开发区 -->
+                <div class="personal-tools-content">
+                    <div class="personal-tools-content-box">
+                        <!-- 待显示区域 -->
+                        <div class="display" id="display">
+                            <div class="typewriter">
+                                <div class="slide"><i></i></div>
+                                <div class="paper"></div>
+                                <div class="keyboard"></div>
+                            </div>
+                            <div class="info">正在加载中...</div>
+                        </div>
+
+                        <!-- 计算器小工具区域 -->
+                        <div class="calculator">
+                            <div class="calculator-box">
+                                
+                            </div>
+                        </div>
+
+                        <!-- IP地址显示区域 -->
+                        <div class="IpBox">
+                            <div class="IPaddressDisplay" id="IPaddressDisplay">
+                                <table class="table" border="none">
+                                    <tr>
+                                        <td>类型</td>
+                                        <td>信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IP 地址</td>
+                                        <td>
+                                            <div id="userAgentIp"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>国家</td>
+                                        <td>
+                                            <div id="userAgentCountry"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>省份</td>
+                                        <td>
+                                            <div id="userAgentRegion"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>城市</td>
+                                        <td>
+                                            <div id="userAgentCity"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>运营商</td>
+                                        <td>
+                                            <div id="userAgentIsp"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>UA</td>
+                                        <td>
+                                            <div id="userAgent"></div>
+                                        </td>
+                                    </tr>
+                                    <th colspan="2">
+                                        **请注意，你的个人信息均不会被网站的所有者采集，所显现的信息，均只存在于本地。请放心使用。本站将严格遵守中华人民共和国🇨🇳法律和香港特别行政区🇭🇰数据隐私保护条例和澳门特别行政区🇲🇴数据隐私保护条例和中华民国🇹🇼数据隐私法和美国🇺🇸个人隐私数据法律和欧洲联盟🇪🇺法律等各国对隐私数据保护的规定，尽最大努力保证你的隐私数据安全。**
+                                        （**注：香港🇭🇰与澳门🇲🇴均为中华人民共和国🇨🇳所管辖，是中华人民共和国🇨🇳不可分割的一部分。中华民国🇹🇼指现阶段的台湾）</th>
+                                </table>
+                            </div>
+                        </div>
+                        
+
+                        <!-- 浏览器内核检测区域 -->
+                        <div class="browserKernel">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
         <!-- 下面是新功能开发区,回到首页 -->
         <div class="alpha" id="alphaReturntop">
             <div class="alpha-box">
@@ -555,5 +652,7 @@
 <!-- end -->
 <!-- swal弹窗 -->
 <script src="./js/sweetalert.min.js"></script>
+<!-- IP地址展示 -->
+<script src="./js/IpIfo.js"></script>
 
 </html>

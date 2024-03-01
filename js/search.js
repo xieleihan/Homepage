@@ -116,14 +116,3 @@ aboutClose.onclick = function () {
     mask.style.opacity = "0";
 }
 // end
-
-// 搜索框
-// start
-var myinput = document.querySelector("#myinput");
-var mybtn = document.querySelector("#mybtn");
-
-mybtn.onclick = function () {
-    var myinputValue = myinput.value;
-    window.location.href = "https://www.bing.com/search?q=" + myinputValue;
-}
-// end

@@ -314,3 +314,36 @@ nightMode.onclick = function () {
         mask.style.opacity = "0";
     }
 }
+
+// 小工具的js部分
+// start
+// 计数器
+var personalTools = 0;
+
+var display = document.getElementById("display");
+var IPaddressDisplay = document.getElementById("IPaddressDisplay");
+var IPpersonalToolsLi = document.getElementById("IPpersonalToolsLi");
+var AlphaPersonalToolsLi = document.getElementById("AlphaPersonalToolsLi");
+// console.log(AlphaPersonalToolsLi)
+// console.log(IPaddressDisplay)
+IPpersonalToolsLi.onmouseover = function () {
+    IPaddressDisplay.style.display = "block";
+    display.style.display = "none";
+}
+IPpersonalToolsLi.onmouseout = function () {
+    if (personalTools != 1) {
+        IPaddressDisplay.style.display = "none";
+        display.style.display = "block";
+    }
+}
+IPpersonalToolsLi.onclick = function () {
+    IPaddressDisplay.style.display = "block";
+    display.style.display = "none";
+    personalTools = 1;
+}
+AlphaPersonalToolsLi.onclick = function () {
+    IPaddressDisplay.style.display = "none";
+    display.style.display = "block";
+    personalTools = 0;
+}
+// end
