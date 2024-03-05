@@ -353,6 +353,9 @@
     text-wrap: nowrap;
 }
 
+/* .sideBar .sideBar-box .sideBar-setting .box .smallprompt  */
+
+
 .sideBar .sideBar-box .sideBar-setting .box .prompt {
     height: 200px;
     width: 23px;
@@ -1915,7 +1918,7 @@ background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128,
     width: 100px;
     transform: translate(-50%, -50%);
     color: white;
-    /* display: none; */
+    display: none;
 }
 
 .main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .display .typewriter {
@@ -2185,7 +2188,7 @@ background-image: linear-gradient(to right bottom, rgb(255, 0, 0), rgb(255, 128,
 }
 
 .main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .IpBox {
-    /* display: none; */
+    display: none;
     width: 100%;
     height: 100%;
 }
@@ -2222,3 +2225,250 @@ th {
     border-bottom: none;
     /* 删除最后一行的底部边框 */
 }
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #275EFE; */
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    display: none;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorDisplay {
+    width: 50%;
+    height: 10%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    /* 高斯模糊 */
+    /* filter: blur(5px); */
+    border-radius: 20px;
+    color: black;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorDisplay .calculatorDisplayValue {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl {
+    width: 50%;
+    height: 60%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: lightpink; */
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl .calculatorUlBox {
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+    margin-top: 2px;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl .calculatorli {
+    width: calc(25% - 1vw);
+    height: calc(22% - 0.5vw);
+    line-height: calc(50px - 0.5vw);
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    color: black;
+    border-radius: calc(25% / 2);
+    cursor: pointer;
+    margin: 2px;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl .calculatorli20 {
+    background-color: #5f85ff;
+    color: white;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl .calculatorli:hover {
+    background-color: black;
+    color: white;
+    outline: 2px solid white;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .calculator .calculator-box .calculatorUl .calculatorli20:hover {
+    background-color: #5C86FF;
+    color: white;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .networkSpeedDetection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    /* background-color: lightblue; */
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .networkSpeedDetection .networkSpeedDetectionBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .personal-tools .personal-tools-box .personal-tools-content .personal-tools-content-box .networkSpeedDetection .networkSpeedDetectionBox .networkSpeedDetectionBoxInfo {
+    width: fit-content;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    color: black;
+    background-color: lightblue;
+}
+
+.main .personalPhotos {
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/article-bg-day.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    /* 滚动槽 */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.06);
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+    }
+
+    /* 滚动条滑块 */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.12);
+        -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.main .personalPhotos .personalPhotosBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main .personalPhotos .personalPhotosBox .photosTitle {
+    width: fit-content;
+    height: auto;
+    color: white;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 30px;
+}
+
+.main .personalPhotos .personalPhotosBox .photosMain {
+    width: 70%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+}
+
+/* display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 10px; */
+/* scroll是溢出隐藏后提供滚动条 */
+/* .main .personalPhotos .personalPhotosBox .photosMain .photosMainBox {
+    width: fit-content;
+    max-width: 100%;
+    height: 100%;
+    column-count: 4;
+    column-gap: 10px;
+    counter-reset: count;
+    width: 960px;
+    margin: 0 auto;
+    overflow: scroll;
+} */
+.main .personalPhotos .personalPhotosBox .photosMain .photosMainBox {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: masonry;
+    grid-gap: 10px;
+    width: 960px;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.main .personalPhotos .personalPhotosBox .photosMain .photosMainBox img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+/* 代码瀑布流 */
+/* start */
+.main .codeWaterFill {
+    width: 100dvw;
+    height: 130dvh;
+    min-height: 800px;
+    position: relative;
+}
+
+.main .codeWaterFill .codeWaterFillBox {
+    width: 100%;
+    height: 100%;
+}
+
+.main .codeWaterFill .codeWaterFillBox canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.main .codeWaterFill .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -50%);
+    color: black;
+    width: fit-content;
+    height: auto;
+    /* 保留空格和换行符 */
+    white-space: pre;
+    font-family: Courier New, monospace;
+    /* 使用等宽字体以保持字符的相对宽度 */
+    font-size: 50px;
+    transition: all 0.5s;
+    /* 调整字体大小以适应字符画 */
+    line-height: 1.2;
+    /* 调整行高以适应字符画 */
+}
+
+/* end */

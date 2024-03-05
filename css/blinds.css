@@ -1,0 +1,69 @@
+.main .blinds {
+    width: 100dvw;
+    height: 100dvh;
+    min-height: 800px;
+}
+
+.main .blinds .blindsBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* place-items: center; */
+}
+
+.main .blinds .blindsBox .photo {
+    height: 100%;
+    transition: all 0.5s;
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.main .blinds .blindsBox .photo:hover {
+    /* width: 150%; */
+    /* transform: scale(1.2); */
+    /* 将背景放大1.2倍 */
+    /* flex-grow: 5; */
+    flex: 2;
+    background-position: center;
+    /* overflow: hidden; */
+    box-shadow: -20px 0 20px 5px rgba(255, 255, 255, .7);
+    
+}
+
+.main .blinds .blindsBox .photo1 {
+    background: url('../images/photo-pocket-1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main .blinds .blindsBox .photo2 {
+    background: url('../images/photo-pocket-2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main .blinds .blindsBox .photo3 {
+    background: url('../images/photo-pocket-3.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main .blinds .blindsBox .photo4 {
+    background: url('../images/photo-pocket-4.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main .blinds .blindsBox .photo5 {
+    background: url('../images/photo-pocket-5.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/base.css">
     <!-- 引入业务样式 -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- 百叶窗效果的样式表 -->
+    <link rel="stylesheet" href="./css/blinds.css">
     <!-- 引入iconfont样式 -->
     <link rel="stylesheet" href="font/iconfont.css">
     <link rel="icon" type="image/x-icon" href="/images/icon.webp">
@@ -44,6 +46,12 @@
                     </a>
                     <a href="#personal-skills">
                         <li>技能</li>
+                    </a>
+                    <a href="#apersonal-tools">
+                        <li>工具</li>
+                    </a>
+                    <a href="#">
+                        <li>相册</li>
                     </a>
                 </ul>
             </div>
@@ -86,6 +94,10 @@
                                 </div>
                             </label>
                             <span>夜间模式</span>
+
+                            <!-- 登录按钮 -->
+                            <!-- 这里预留一个空间可以放置登录按钮 -->
+
                         </div>
                     </div>
                     <div class="prompt fl">
@@ -418,15 +430,15 @@
         </div>
 
         <!-- 小工具 -->
-        <div class="personal-tools">
+        <div class="personal-tools" id="apersonal-tools">
             <div class="personal-tools-box">
                 <div class="personal-tools-title">小工具</div>
                 <!-- 个人小工具的导航条 -->
                 <div class="personal-tools-nav clearfix">
                     <ul>
-                        <li class="fl" id="personalToolsLi">计算器</li>
+                        <li class="fl" id="calculatorPersonalToolsLi">计算器</li>
                         <li class="fl" id="IPpersonalToolsLi">IP地址展示</li>
-                        <li class="fl" id="personalToolsLi">浏览器内核</li>
+                        <li class="fl" id="networkPersonalToolsLi">网速检测</li>
                         <li class="fl" id="AlphaPersonalToolsLi">暂未开发</li>
                     </ul>
                 </div>
@@ -445,15 +457,41 @@
                         </div>
 
                         <!-- 计算器小工具区域 -->
-                        <div class="calculator">
+                        <div class="calculator" id="calculatorDisplay">
                             <div class="calculator-box">
-                                
+                                <div class="calculatorDisplay">
+                                    <div class="calculatorDisplayValue" id="calculatorDisplayValue"></div>
+                                </div>
+                                <div class="calculatorUl clearfix">
+                                    <div class="calculatorUlBox">
+                                        <div id="calculatorli" class="calculatorli fl calculatorli1">%</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli2">C</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli3">/</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli4">Back</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli5">7</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli6">8</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli7">9</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli8">*</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli9">4</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli10">5</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli11">6</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli12">-</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli13">1</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli14">2</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli15">3</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli16">+</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli17">+/-</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli18">0</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli19">.</div>
+                                        <div id="calculatorli" class="calculatorli fl calculatorli20">=</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- IP地址显示区域 -->
-                        <div class="IpBox">
-                            <div class="IPaddressDisplay" id="IPaddressDisplay">
+                        <div class="IpBox" id="IPaddressDisplay">
+                            <div class="IPaddressDisplay">
                                 <table class="table" border="none">
                                     <tr>
                                         <td>类型</td>
@@ -503,12 +541,53 @@
                         </div>
                         
 
-                        <!-- 浏览器内核检测区域 -->
-                        <div class="browserKernel">
-
+                        <!-- 网速检测区域 -->
+                        <div class="networkSpeedDetection" id="networkSpeedDetectionDisplay">
+                            <!-- 这里使用JavaScript来写入数据 -->
+                            <div class="networkSpeedDetectionBox" >
+                                <div class="networkSpeedDetectionBoxInfo" id="networkSpeedDetection"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="personalPhotos">
+            <div class="personalPhotosBox">
+                <div class="photosTitle">相册</div>
+                <div class="photosMain">
+                    <div class="photosMainBox" id="photosMainBox">
+                        <!-- 这是一个案例<img src="https://picsum.photos/200/300.webp?random=1"> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 代码瀑布流 -->
+        <div class="codeWaterFill" id="codeWaterFill">
+            <div class="title" id="codeWaterFillTitle">
+                     __   __       ___                  
+                    /__` /  \ |  |  |  |__|  /\  |__/ | 
+                    .__/ \__/ \__/  |  |  | /~~\ |  \ | 
+                                                        
+            </div>
+            <div class="codeWaterFillBox">
+                <!-- 这里要实现需要用到canvas这个标签 -->
+                <canvas id="bg"></canvas>
+            </div>
+        </div>
+
+        <!-- 百叶窗效果 -->
+        <div class="blinds">
+            <div class="blindsBox">
+                <div class="photo photo1"></div>
+                <div class="photo photo2"></div>
+                <div class="photo photo3"></div>
+                <div class="photo photo4"></div>
+                <div class="photo photo5"></div>
+                <!-- <div class="photo"></div> -->
             </div>
         </div>
 
@@ -654,5 +733,9 @@
 <script src="./js/sweetalert.min.js"></script>
 <!-- IP地址展示 -->
 <script src="./js/IpIfo.js"></script>
+<!-- 代码瀑布流 -->
+<script src="./js/codeWaterFill.js"></script>
+<!-- 百叶窗效果 -->
+<script src="./js/blinds.js"></script>
 
 </html>

@@ -320,24 +320,138 @@ nightMode.onclick = function () {
 // 计数器
 var personalTools = 0;
 
+// 这个是待开发的页面
 var display = document.getElementById("display");
+var AlphaPersonalToolsLi = document.getElementById("AlphaPersonalToolsLi");
+// 这个是显示IP相关信息的页面
 var IPaddressDisplay = document.getElementById("IPaddressDisplay");
 var IPpersonalToolsLi = document.getElementById("IPpersonalToolsLi");
-var AlphaPersonalToolsLi = document.getElementById("AlphaPersonalToolsLi");
-// console.log(AlphaPersonalToolsLi)
-// console.log(IPaddressDisplay)
+// 这个是计算器的页面
+var calulatorDisplay = document.getElementById("calculatorDisplay");
+var calulatorPersonalToolsLi = document.getElementById("calculatorPersonalToolsLi");
+// 这个是网速显示的页面
+var networkSpeedDetection = document.getElementById("networkSpeedDetection");
+var networkPersonalToolsLi = document.getElementById("networkPersonalToolsLi");
+var networkSpeedDetectionDisplay = document.getElementById("networkSpeedDetectionDisplay");
+// console.log(networkSpeedDetectionDisplay);
+// 下面这个方法是调用浏览器自带的API,显示网络的相关信息
+// console.log(navigator.connection)
+// navigator有另外的一个方法,是用来显示网络时候在线
+// 这个是一个布尔值,true代表在线,false代表离线
+// console.log(navigator.onLine);
+
+
+// 网速显示的函数
+// start
+function getNetworkInfo() {
+    let info;
+    if (navigator.onLine) {
+        info = {
+            type: navigator.connection.effectiveType,
+            rtt: navigator.connection.rtt,
+            downlink: navigator.connection.downlink
+        };
+    }
+    else {
+        info = {
+            type: "offline"
+        };
+    }
+    return info;
+}
+
+function updateInfo() {
+    const info = getNetworkInfo();
+    const card = networkSpeedDetection;
+    if (info.type === "offline") {
+        card.innerHTML = '<p><strong>网络状态: </strong>离线</p>' +
+            '<p><strong>延迟: </strong>离线</p>' +
+            '<p><strong>带宽: </strong>离线</p>';
+        networkSpeedDetection.style.backgroundColor = "lightpink";
+        card.classList.add("off");
+    } else {
+        card.innerHTML = `<p><strong>网络状态: </strong>${info.type}</p>` +
+            `<p><strong>延迟: </strong>${info.rtt}ms</p>` +
+            `<p><strong>带宽: </strong>${info.downlink}Mb/s</p>`;
+        networkSpeedDetection.style.backgroundColor = "lightblue";
+        card.classList.remove("off");
+    }
+}
+
+updateInfo();
+
+// 发生网络切换的时候,进行刷新
+window.addEventListener("online", updateInfo);
+window.addEventListener("offline", updateInfo);
+// 监听网络状态变化
+navigator.connection.addEventListener("change", updateInfo);
+// 定时刷新网络状态
+setInterval(updateInfo, 10000);
+// end
+
+// 这里是IP显示的函数
 IPpersonalToolsLi.onmouseover = function () {
     IPaddressDisplay.style.display = "block";
     display.style.display = "none";
+    calulatorDisplay.style.display = "none";
+    networkSpeedDetectionDisplay.style.display = "none";
 }
 IPpersonalToolsLi.onmouseout = function () {
     if (personalTools != 1) {
         IPaddressDisplay.style.display = "none";
         display.style.display = "block";
+        networkSpeedDetectionDisplay.style.display = "none";
     }
 }
+
+// 这个是计算器的函数调用
+calulatorPersonalToolsLi.onmouseover = function () {
+    calulatorDisplay.style.display = "block";
+    display.style.display = "none";
+    IPaddressDisplay.style.display = "none";
+    networkSpeedDetectionDisplay.style.display = "none";
+}
+calulatorPersonalToolsLi.onmouseout = function () {
+    if (personalTools != 1) {
+        calulatorDisplay.style.display = "none";
+        display.style.display = "block";
+        IPaddressDisplay.style.display = "none";
+        networkSpeedDetectionDisplay.style.display = "none";
+
+    }
+}
+
+// 这个是网速检测函数的调用
+networkPersonalToolsLi.onmouseover = function () {
+    networkSpeedDetectionDisplay.style.display = "block";
+    display.style.display = "none";
+    IPaddressDisplay.style.display = "none";
+    calulatorDisplay.style.display = "none";
+    personalTools = 1;
+}
+networkPersonalToolsLi.onmouseout = function () {
+    if (personalTools != 1) {
+        networkSpeedDetectionDisplay.style.display = "none";
+        display.style.display = "block";
+        IPaddressDisplay.style.display = "none";
+        calulatorDisplay.style.display = "none";
+    }
+}
+
+calulatorPersonalToolsLi.onclick = function () {
+    calulatorDisplay.style.display = "block";
+    display.style.display = "none";
+    personalTools = 1;
+}
+
 IPpersonalToolsLi.onclick = function () {
     IPaddressDisplay.style.display = "block";
+    display.style.display = "none";
+    personalTools = 1;
+}
+
+networkPersonalToolsLi.onclick = function () {
+    networkSpeedDetectionDisplay.style.display = "block";
     display.style.display = "none";
     personalTools = 1;
 }
@@ -347,3 +461,40 @@ AlphaPersonalToolsLi.onclick = function () {
     personalTools = 0;
 }
 // end
+
+// 个人小工具计算器的JavaScript实现
+// start
+// 我的解决思路,先是全局找遍id是calculatorli的元素
+var calulator = document.querySelectorAll("#calculatorli");
+var calculatorDisplayValue = document.getElementById("calculatorDisplayValue");
+var str = "";
+
+// 为每个 div 元素添加点击事件监听器
+calulator.forEach(function (div) {
+
+    div.addEventListener('click', function () {
+        // 获取被点击 div 元素的文本内容
+        var content = div.textContent;
+        // 输出到控制台
+        // console.log(content);
+        str += content;
+        calculatorDisplayValue.textContent = str;
+    });
+});
+// end
+
+// 生成随机种子图片链接
+// 随机数范围在200-1000之间
+var photosMainBox = document.getElementById("photosMainBox");
+function randomNum() {
+    var num = Math.floor(Math.random() * 800 + 200);
+    return num;
+}
+
+for (var i = 0; i < 100; i++) {
+    // var seed = randomNum();
+    var seed2 = randomNum();
+    var str = '';
+    str += '<img src="https://picsum.photos/' + 200 + '/' + seed2 + '.webp?random=' + i + '"></img>'
+    photosMainBox.innerHTML += str;
+}
