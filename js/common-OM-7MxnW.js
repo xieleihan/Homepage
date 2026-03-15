@@ -1,0 +1,1 @@
+function i(e,t){window.localStorage.setItem(e,t)}function n(){return/(iPhone|iPad|iPod|iOS)/i.test(window.navigator.userAgent)?"ios":/(Android)/i.test(window.navigator.userAgent)?"android":"pc"}export{n as j,i as s};

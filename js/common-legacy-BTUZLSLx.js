@@ -1,0 +1,1 @@
+System.register([],(function(t,i){"use strict";return{execute:function(){t({j:function(){return/(iPhone|iPad|iPod|iOS)/i.test(window.navigator.userAgent)?"ios":/(Android)/i.test(window.navigator.userAgent)?"android":"pc"},s:function(t,i){window.localStorage.setItem(t,i)}})}}}));
